@@ -5,14 +5,22 @@ import { Link } from "react-router-dom";
 //Component Imports
 import Jumbotron from "../components/Jumbotron";
 import { Col, Row, Container } from "../components/Grid";
-
+import menu from "./";
 //Middleware Imports
 import API from "../utils/API";
 
 class Dashboard extends Component {
-  state = {
+  
 
-  };
+    constructor(props){
+      super(props)
+       this.state = [
+        menu,
+      ]
+    
+    }
+     
+    
 
   componentDidMount() {
 
