@@ -13,7 +13,8 @@ import NoMatch from "./pages/NoMatch";
 
 
 
-  render() {
+
+  function App() {
     return (
       <Router>
       <div>
