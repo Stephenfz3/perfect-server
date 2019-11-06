@@ -26,7 +26,7 @@ import NoMatch from "./pages/NoMatch";
     </Router>
     );
   }
-}
+
 
 export default App;
 
