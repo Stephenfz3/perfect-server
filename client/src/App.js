@@ -9,7 +9,10 @@ import Nav from "./components/Nav";
 import Dashboard from "./pages/Dashboard";
 import NoMatch from "./pages/NoMatch";
 
-class App extends Component {
+
+
+
+
   render() {
     return (
       <Router>

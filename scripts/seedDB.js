@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
-// This file empties the Books collection and inserts the books below
+// This file empties the menus collection and inserts the menus below
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/reactreadinglist"
+  "mongodb://localhost/perfectServer"
 );
 
 const menu = [
@@ -137,9 +137,9 @@ const menu = [
   },]
 ;
 
-db.Book
+db.Menu
   .remove({})
-  .then(() => db.Book.collection.insertMany(bookSeed))
+  .then(() => db.Menu.collection.insertMany(menu))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
