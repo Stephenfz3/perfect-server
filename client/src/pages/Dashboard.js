@@ -40,7 +40,7 @@ class Dashboard extends Component {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>Perfect Server</h1>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
             </Jumbotron>
           </Col>
         </Row>
