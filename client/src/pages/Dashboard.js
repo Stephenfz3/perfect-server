@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 //Component Imports
 import Jumbotron from "../components/Jumbotron";
 import { Col, Row, Container } from "../components/Grid";
-import menu from "./";
+import menu from "../menu.json";
 //Middleware Imports
 import API from "../utils/API";
 
