@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import Jumbotron from "../components/Jumbotron";
 import { Col, Row, Container } from "../components/Grid";
 import menu from "../menu.json";
+import Questions from "../components/Questions"
+
 //Middleware Imports
 import API from "../utils/API";
 
@@ -48,7 +50,9 @@ class Dashboard extends Component {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>Perfect Server</h1>
+
+              <Questions>
+              </Questions>
             </Jumbotron>
           </Col>
         </Row>
