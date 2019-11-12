@@ -1,3 +1,5 @@
 module.exports = {
-  Menu: require("./menu")
+  Menu: require("./menu"),
+  FoodPairing: require("./foodPairing"),
+  DrinkPairing: require("./drinkPairing")
 };
