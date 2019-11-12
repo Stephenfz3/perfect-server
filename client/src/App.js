@@ -1,10 +1,13 @@
 /* eslint-disable default-case */
 import React,{Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
-import TypesOfFood from './components/TypeOfFood';
-import FoodCategory from './components/FoodCategory';
-import {items} from './data/items';
+// import TypesOfFood from './components/TypeOfFood';
+// import FoodCategory from './components/FoodCategory';
+// import {items} from './data/items';
+import HomePage from './Pages/HomePage';
+import {BrowserRouter as Router, Route,Switch} from 'react-router-dom';
+import SignUpPage from './Pages/SignUpPage';
+import DrinkFoodPage from './Pages/DrinkFoodPage'
 
 class App extends Component
 {
@@ -39,15 +42,26 @@ class App extends Component
     }
     render()
     {
-        if(!this.state.typeOfFood)
-          return <TypesOfFood onFoodSelected={this.selectFoodType} />;
-        else if(this.state.currentCategory)
-          return <FoodCategory category={this.state.currentCategory} onItemSelected={this.selectItem} items={items.filter(item=>this.state.typeOfFood[this.state.currentCategory].includes(item.id))} />;
-        else
-          return <div>
-            <h1>This is your order:</h1>
-            <div>{JSON.stringify(this.state.order)}</div>
-          </div>
+      return (
+      <Router>
+      <div>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/signup" component={SignUpPage} />
+          <Route exact path="/drinkfood" component={DrinkFoodPage} />
+        </Switch>
+      </div>
+    </Router>
+      )
+        // if(!this.state.typeOfFood)
+        //   return <TypesOfFood onFoodSelected={this.selectFoodType} />;
+        // else if(this.state.currentCategory)
+        //   return <FoodCategory category={this.state.currentCategory} onItemSelected={this.selectItem} items={items.filter(item=>this.state.typeOfFood[this.state.currentCategory].includes(item.id))} />;
+        // else
+        //   return <div>
+        //     <h1>This is your order:</h1>
+        //     <div>{JSON.stringify(this.state.order)}</div>
+        //   </div>
     }
 }
 export default App;
