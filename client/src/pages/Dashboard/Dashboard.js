@@ -3,11 +3,11 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 //Component Imports
-import Jumbotron from "../components/Jumbotron";
-import { Col, Row, Container } from "../components/Grid";
-import menu from "../menu.json";
+import Jumbotron from "../../components/Jumbotron";
+import { Col, Row, Container } from "../../components/Grid";
+import menu from "../../menu.json";
 //Middleware Imports
-import API from "../utils/API";
+import API from "../../utils/API";
 
 class Dashboard extends Component {
   

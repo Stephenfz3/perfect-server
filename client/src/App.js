@@ -6,8 +6,7 @@ import "./App.css";
 // Component Imports
 import Nav from "./components/Nav";
 // Pages Imports
-import Dashboard from "./pages/Dashboard";
-import NoMatch from "./pages/NoMatch";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 
 
@@ -21,7 +20,6 @@ import NoMatch from "./pages/NoMatch";
         <Nav />
         <Switch>
           <Route exact path="/" component={Dashboard} />
-          <Route component={NoMatch} />
         </Switch>
       </div>
     </Router>
