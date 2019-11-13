@@ -5,6 +5,7 @@ const foodPairingSchema = new Schema({
  
     _id: {type: Number},
     name: {type: String},
+    image: {type: String},
     apetizers:{type: Array},
     mainCourses:{type: Array},
     desserts:{type: Array},
