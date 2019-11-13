@@ -2,13 +2,16 @@
   "name": "dynamic-menu",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3001/",
   "dependencies": {
+    "axios": "^0.19.0",
+    "express": "^4.17.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-scripts": "3.2.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set PORT=3005 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
