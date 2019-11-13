@@ -40,7 +40,7 @@ class foodpage extends Component {
             <button onClick={this.Clicked}>Click</button>
 
               {this.state.foodPairings.map((food,index)=>
-                <li key={index}><button classname="btn btn-primary" onClick={()=>this.foodClicked(food)}>{food.name}</button></li>)}
+                <li key={index}><button classname="btn btn-primary" onClick={()=>this.foodClicked(food)}>{food.name}<img alt=".."src={food.image}></img></button></li>)}
             
         
          </div>
