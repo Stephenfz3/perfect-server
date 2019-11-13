@@ -7,7 +7,8 @@ import './App.css';
 import HomePage from './Pages/HomePage';
 import {BrowserRouter as Router, Route,Switch} from 'react-router-dom';
 import SignUpPage from './Pages/SignUpPage';
-import DrinkFoodPage from './Pages/DrinkFoodPage'
+import DrinkFoodPage from './Pages/DrinkFoodPage';
+import foodpage from "./Pages/FoodPage/index"
 
 class App extends Component
 {
@@ -49,6 +50,7 @@ class App extends Component
           <Route exact path="/" component={HomePage} />
           <Route exact path="/signup" component={SignUpPage} />
           <Route exact path="/drinkfood" component={DrinkFoodPage} />
+          <Route exact path="/foodpage" component={foodpage} />
         </Switch>
       </div>
     </Router>

@@ -8,7 +8,9 @@ const foodPairingSchema = new Schema({
     apetizers:{type: Array},
     mainCourses:{type: Array},
     desserts:{type: Array},
-    drinks:{type: Array}
+    drinks:{type: Array},
+    image:{type: String}
+
 });
 
 const FoodPairing = mongoose.model("foodPairing", foodPairingSchema);
