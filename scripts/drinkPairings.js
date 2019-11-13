@@ -40,7 +40,7 @@ const drinkPairings=[
 module.exports=function(db)
 {
 db.DrinkPairing
-  .remove()
+  .remove({})
   .then(() => db.DrinkPairing.collection.insertMany(drinkPairings))
   .then(data => {
     console.log(data.result.n + " records inserted!");
