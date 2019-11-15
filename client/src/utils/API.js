@@ -6,7 +6,7 @@ export default {
     },
 
     getDetails: function(id) {
-        return axios.get("/api/foodpage/" + id);
+        return axios.get("/api/foodpage/"+id );
     }
 
 }

@@ -36,12 +36,19 @@ class foodpage extends Component {
             <div>
             <button onClick={this.Clicked}>Click</button>
               {this.state.foodPairings.map((food,index)=>
-                <li key={food._id}><button className="btn btn-primary" onClick={()=>this.foodClicked(food)}>{food.name}<Link to={{
+                <li key={food._id}>
+                    <button className="btn btn-primary" onClick={()=>this.foodClicked(food)}>
+                    {food.name}
+                    <Link to={{
                     pathname: "/foodpage/"+ food._id,
                     state:{...food}
-                }} ><img {...food} alt=".."src={food.image}></img></Link></button></li>)}
+                }} >
+                    <img {...food} alt=".." src={food.image}/>
+                        </Link>
+                        </button>
+                        </li>
+                        )}
             
-            {console.log(this.state)}
 
          </div>
         )
