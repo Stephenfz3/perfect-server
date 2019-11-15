@@ -17,4 +17,9 @@ router.route("/")
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },);
+
+router
+.route("/:id")
+      .get(foodController.findById)
+
   module.exports = router;

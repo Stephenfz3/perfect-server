@@ -1,6 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from 'react';
 import API from "../../utils/API";
+import {Link} from 'react-router-dom';
 
 class foodpage extends Component {
     constructor(props){
@@ -9,19 +10,15 @@ class foodpage extends Component {
     state = {
         foodPairings: [],
         name: "",
-        app: [],
-        mainCourse: [],
-        dessert: [],
-        drink: [],
-        image:""
+        
       };
    
       foodClicked = (item) => {
-          this.setState({app: item.apetizers, mainCourse: item.mainCourses, dessert: item.desserts, drink: [...item.drinks]})
-          console.log(this.state)
+          this.setState({app: item.apetizers, mainCourses: item.mainCourses, dessert: item.desserts, drink: [...item.drinks]})
       }
       componentDidMount() {
             this.loadFoods()
+            this.setState({...this.state.foodPairings})
            };
       
             
@@ -38,11 +35,14 @@ class foodpage extends Component {
         return ( 
             <div>
             <button onClick={this.Clicked}>Click</button>
-
               {this.state.foodPairings.map((food,index)=>
-                <li key={index}><button classname="btn btn-primary" onClick={()=>this.foodClicked(food)}>{food.name}<img alt=".."src={food.image}></img></button></li>)}
+                <li key={food._id}><button className="btn btn-primary" onClick={()=>this.foodClicked(food)}>{food.name}<Link to={{
+                    pathname: "/foodpage/"+ food._id,
+                    state:{...food}
+                }} ><img {...food} alt=".."src={food.image}></img></Link></button></li>)}
             
-        
+            {console.log(this.state)}
+
          </div>
         )
 }
