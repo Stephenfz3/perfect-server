@@ -9,6 +9,8 @@ import {BrowserRouter as Router, Route,Switch} from 'react-router-dom';
 import SignUpPage from './Pages/SignUpPage';
 import DrinkFoodPage from './Pages/DrinkFoodPage';
 import foodpage from "./Pages/FoodPage/index"
+import Login from './components/containers/LoginPage'; 
+import Navbar from './components/Navbar';
 
 class App extends Component
 {
@@ -18,7 +20,9 @@ class App extends Component
         this.state={
             typeOfFood:null,
             currentCategory:null,
-            order:[]
+            order:[],
+            session:null
+
         }
     }
     selectFoodType=(food)=>{
@@ -41,16 +45,20 @@ class App extends Component
       }
       this.setState({currentCategory:newCategory,order:[...this.state.order,item]})
     }
+    signIn=(session)=>this.setState({session});
+
     render()
     {
       return (
       <Router>
       <div>
+      <Navbar />
         <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/signup" component={SignUpPage} />
-          <Route exact path="/drinkfood" component={DrinkFoodPage} />
+          <Route exact path="/" component={()=><HomePage session={this.state.session} /> } />
+          <Route exact path="/signup" component={()=><SignUpPage session={this.state.session} /> } />
+          <Route exact path="/drinkfood" component={()=><DrinkFoodPage session={this.state.session} /> } />
           <Route exact path="/foodpage" component={foodpage} />
+          {!this.state.session&& <Route exact path="/login" component={()=><Login onLogin={this.signIn} />} />}
         </Switch>
       </div>
     </Router>
