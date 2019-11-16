@@ -1,11 +1,14 @@
 .navbar-brand{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Indie Flower', cursive;
+
     font-size: 35px!important;
+    
 }
 .navbar-nav{
     float: right!important;
     font-family: 'Poppins', sans-serif;
     font-size:20px;
+
 }
 .navbar-collapse 
 {
@@ -14,4 +17,7 @@
 .space-filler
 {
     flex:1 1;
+}
+.bg-light {
+    background-color:white !important;
 }
