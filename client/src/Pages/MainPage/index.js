@@ -13,7 +13,7 @@ class Detail extends Component {
 
   state = {
     current: 1,
-   selectedSteps: [],
+   selectedSteps: [1],
   result: []
 
 
@@ -64,22 +64,22 @@ class Detail extends Component {
 
 
   nextStep = () => {
-    /*const { current } = this.state;
-    let {selectedSteps} = this.state;*/
+    let { current } = this.state;
+    const {selectedSteps} = this.state;
+    this.setState({result:[]})
+    
+    if(selectedSteps.includes(current) || selectedSteps.length < 4) {
+      this.setState({ current: (current + 1), selectedSteps: [...this.state.selectedSteps, current++] })
+      console.log("Next STEp 1", this.state.result)
 
-  //    if(selectedSteps.includes(current+1) || selectedSteps.length!==3) {
-  //     this.setState({ current: current + 1, selectedSteps: [...this.state.selectedSteps, current] })
-  //     console.log("Next STEp 1", this.state.result)
 
+    } else if (selectedSteps.includes(current) || selectedSteps.length<3) {
+    this.setState({ current: current + 2, selectedSteps: [...this.state.selectedSteps, current] })
 
-  //   } else if (selectedSteps.includes(current+1) && selectedSteps.length!==3 ) {
-  //   this.setState({ current: current + 2, selectedSteps: [...this.state.selectedSteps, current] })
-
-  // } else {
-  //   console.log("YOU fiLLED YOUR CART")
-  // }
-  let { current } = this.state;
-  const {selectedSteps} = this.state;
+  } else {
+    console.log("YOU fiLLED YOUR CART")
+  }
+  
 
   switch (current) {
     case 1:
@@ -170,6 +170,7 @@ class Detail extends Component {
 
 
     return (
+
 
       <div>
         <h1>MainPage</h1>
