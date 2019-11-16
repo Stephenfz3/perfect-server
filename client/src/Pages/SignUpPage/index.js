@@ -6,7 +6,7 @@ class SignUp extends Component {
         return (
             <div>
             <h1>Sign Up B*tch</h1>
-            <Link class="btn btn-primary btn-lg" to="/drinkfood" role="button">Register Finished</Link>
+            <Link class="btn btn-primary btn-lg" to="/" role="button">Register Finished</Link>
             </div>
         )
     }
