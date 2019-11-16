@@ -17,4 +17,15 @@ router.route("/")
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },);
+
+router
+.route("/:id")
+      .get(function(req,res){
+        db.Menu
+        .findById(req.params.id)
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err))
+      })
+        // foodController.findOne
+
   module.exports = router;

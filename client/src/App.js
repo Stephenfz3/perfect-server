@@ -9,6 +9,7 @@ import {BrowserRouter as Router, Route,Switch} from 'react-router-dom';
 import SignUpPage from './Pages/SignUpPage';
 import DrinkFoodPage from './Pages/DrinkFoodPage';
 import foodpage from "./Pages/FoodPage/index"
+import MainPage from "./Pages/MainPage"
 
 class App extends Component
 {
@@ -51,6 +52,7 @@ class App extends Component
           <Route exact path="/signup" component={SignUpPage} />
           <Route exact path="/drinkfood" component={DrinkFoodPage} />
           <Route exact path="/foodpage" component={foodpage} />
+          <Route exact path="/foodpage/:id" component={MainPage} />
         </Switch>
       </div>
     </Router>
