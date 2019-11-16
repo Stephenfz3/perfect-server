@@ -25,7 +25,6 @@ class foodpage extends Component {
            };
       
             
-    
       loadFoods = () => {
           API.getFoodPair()
           .then(res =>this.setState({foodPairings: res.data})
@@ -41,8 +40,6 @@ class foodpage extends Component {
 
               {this.state.foodPairings.map((food,index)=>
                 <li key={index}><button classname="btn btn-primary" onClick={()=>this.foodClicked(food)}>{food.name}<img alt=".."src={food.image}></img></button></li>)}
-            
-        
          </div>
         )
 }

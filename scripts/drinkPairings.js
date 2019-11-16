@@ -1,7 +1,7 @@
 
 const drinkPairings=[
   {
-    id:1,
+    _id:1,
     name:"Beer",
     image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzorUyrlMXXuIax4_NJ5Z5fp3DMSj64VjJ0H-niHmE9xubA5evcQ&s",
     apetizers:[1,2,3],
@@ -10,7 +10,7 @@ const drinkPairings=[
     drinks:[10,11,12]
 },
 {
-    id:2,
+    _id:2,
     name:"Soda",
     image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgI10-kUWxfykWSf5iXGJW5tMkJoBGa860nX1HmDwHQCs8bZ7D&s",
     apetizers:[1,2,3],
@@ -19,7 +19,7 @@ const drinkPairings=[
     drinks:[10,11,12]
 },
 {
-    id:3,
+    _id:3,
     name:"Wine",
     image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDtiD9sUQqgOV-D-dK1BkNX6w7lKq-gxoJLGJ0UZhsK1vTYfJW&s",
     apetizers:[1,2,3],
@@ -28,7 +28,7 @@ const drinkPairings=[
     drinks:[10,11,12]
 },
 {
-    id:4,
+    _id:4,
     name:"Cocktails",
     image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDO2329cJnjjsqduzXxOlAeUudPjZew31kdM244ZWopMGw8JAgdQ&s",
     apetizers:[1,2,3],
