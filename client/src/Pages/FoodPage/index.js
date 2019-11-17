@@ -22,7 +22,6 @@ class foodpage extends Component {
            };
       
             
-    
       loadFoods = () => {
           API.getFoodPair()
           .then(res =>this.setState({foodPairings: res.data})
