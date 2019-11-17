@@ -9,10 +9,10 @@ import {BrowserRouter as Router, Route,Switch} from 'react-router-dom';
 import SignUpPage from './Pages/SignUpPage';
 import DrinkFoodPage from './Pages/DrinkFoodPage';
 import foodpage from "./Pages/FoodPage/index"
-import drinkpage from "./Pages/DrinkPage"
-import Login from './components/containers/LoginPage'; 
-import Navbar from './components/Navbar';
+import Login from './Components/LogInForm'; 
+import Navbar from './Components/Navbar';
 import MainPage from "./Pages/MainPage"
+import drinkpage from "./Pages/DrinkPage"
 
 class App extends Component
 {
