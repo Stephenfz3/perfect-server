@@ -4,10 +4,6 @@ import API from "../../utils/API";
 
 
 
-
-
-
-
 class Detail extends Component {
 
 
@@ -183,10 +179,14 @@ class Detail extends Component {
       <div>
         <h1>MainPage</h1>
         <h2> {console.log("Main Page", this.state)}</h2>
+<<<<<<< HEAD
         {this.state.result.map(name=> (<h1>{name.item}</h1>))}
+=======
+        {this.state.result.map((name, index)=>(<h1 key={index}>{name.item}</h1>))}
+>>>>>>> 73822ffdd338ffc6ce1ecfd4995546a5a5f2fdc5
         
-        <button onClick={this.nextStep}>NExt Step</button>
-        <button onClick={this.prevStep}>NExt Step</button>
+        <button onClick={this.nextStep}>Skip</button>
+        <button onClick={this.prevStep}>Back</button>
 
           
 

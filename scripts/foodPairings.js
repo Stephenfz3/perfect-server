@@ -13,8 +13,8 @@ const foodPairings=[
     _id:2,
     name:"Steak",
     image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkgs1aEiMKKKO88ncfJoHYv8s5swZtHNAZtOanONstVt_HJeYu&s",
-    apetizers:[1,2,3],
-    mainCourses:[4,5,6],
+    apetizers:[3,2,1],
+    mainCourses:[6,5,4],
     desserts:[7,8,9],
     drinks:[10,11,12]
 },
