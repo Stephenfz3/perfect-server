@@ -1,187 +1,151 @@
 import React, { Component } from 'react';
 import API from "../../utils/API";
-// import DrinkFoodButtons from "../../Components/DrinkFoodButtons";
-
-
-
-
-
-
+import Carousel from "../../Components/Carousel"
+import { Col, Row, Container } from "../../Components/Grid"
 
 class Detail extends Component {
 
-
   state = {
     current: 1,
-   selectedSteps: [],
-  result: []
-
-
+    selectedSteps: [1,3],
+    result: [],
+    skipped: []
   }
-
-
-  // async componentDidMount() {
-  //   try {
-  //     const response = await fetch(`/api/foodpage/:id`);
-  //     const json = await response.json();
-  //     this.setState({ data: json });
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-
-
-  async componentDidMount() {
-    let newState = this.props.location.state;
-    this.setState({ ...newState },()=>{
-      let selectedSteps = this.state.selectedSteps
-
-      if(selectedSteps.length < 4 || selectedSteps.includes(!1)){
-    try {
-      this.state.apetizers.map(main => (
-        this.outside(main)
-        
-        
-      ))
-    } catch (err) {
-      console.log(err)
-    }
-  } else {
-    console.log("CASE 1 ELSE MSG")
-  }
-    })
-    
-  }
-
-   outside = (id) => {
-   
-    API.getDetails(id)
-      .then(res => this.setState({result:[...this.state.result,res.data]}))
-      .catch(err => console.log(err))
-       console.log( this.state.result)
-  }
-
 
 
 
   nextStep = () => {
-    /*const { current } = this.state;
-    let {selectedSteps} = this.state;*/
+    let { current } = this.state;
+    let {skipped} = this.state;
+    let { selectedSteps } = this.state;
+    this.setState({ result: [] })
 
-  //    if(selectedSteps.includes(current+1) || selectedSteps.length!==3) {
-  //     this.setState({ current: current + 1, selectedSteps: [...this.state.selectedSteps, current] })
-  //     console.log("Next STEp 1", this.state.result)
-
-
-  //   } else if (selectedSteps.includes(current+1) && selectedSteps.length!==3 ) {
-  //   this.setState({ current: current + 2, selectedSteps: [...this.state.selectedSteps, current] })
-
-  // } else {
-  //   console.log("YOU fiLLED YOUR CART")
-  // }
-  let { current } = this.state;
-  const {selectedSteps} = this.state;
-
-  switch (current) {
-    case 1:
-      if(selectedSteps.length < 3 || selectedSteps.includes(!1)){
-      try {
-        this.state.apetizers.map(main => (
-          this.outside(main)
-        ))
-      } catch (err) {
-        console.log(err)
-      }
-    } else {
-      console.log("CASE 1 ELSE MSG")
-    }
-      break;
-
-    case 2:
-        if(selectedSteps.length<3 || selectedSteps.includes(!3)){
-          try {
-            this.state.mainCourses.map(main => (
-              this.outside(main)
-            ))
-          } catch (err) {
-            console.log(err)
-          }
-        } else {
-          console.log("CASE 2 ELSE MSG")
-        }
-          break;
-
-    case 3:
-        if(selectedSteps.length<3 || selectedSteps.includes(!3)){
-      try {
-        this.state.desserts.map(main => (
-          this.outside(main)
-        ))
-      } catch (err) {
-        console.log(err)
-      }
-    } else {
-      console.log("CASE 3 ELSE MSG")
-    }
-      break;
-
-    case 4:
-        if(selectedSteps.length<3 || selectedSteps.includes(!3)){
-          console.log("CASE 4 ELSE MSG")
-        } else {
-          try {
-            this.state.drinks.map(main => (
-              this.outside(main)
-            ))
-          } catch (err) {
-            console.log(err)
-          }
-       
-        }
-          break;
-
-
-    default:
-        current = 1
-        // try {
-        //   this.state.apetizers.map(app => (
-        //     this.outside(app)
-        //   ))
-        // } catch (err) {
-        //   console.log(err)
-        // }
-        break;
-  }
-  }
-  prevStep = () => {
-    const { current } = this.state;
-    const {selectedSteps} = this.state;
-     const reducedSteps = selectedSteps.filter(item => {return item !== current-1})
-    this.setState({ current: current - 1, selectedSteps: reducedSteps  });
-  }
-
+    if (current >= 4 && skipped.length > 0) {
+      this.setState({current: skipped[0], skipped: skipped.filter(item => { return item !== item[0] })},()=>{
+        this.switchIt(skipped[0])
+      })
+      console.log("current > 4 && skipped.length > 0")
+    } else if (current > 4 && skipped.length < 1){
+      console.log("All steps selected")
+      return;
+    
+    } else if (selectedSteps.includes(current+1)) {
+      this.setState({ current: current +2, skipped: [...this.state.skipped, current]}, () => {
+        this.switchIt(current+2);
+        console.log(selectedSteps.includes(current))
+      })
  
+    } else {
+      
+      this.setState({ current: current+1, skipped: [...this.state.skipped, current]}, () => {
+        this.switchIt(current+1);
+        console.log(selectedSteps.includes(current))
+      })
+    } 
+  }
 
+  switchIt = (step) => {
 
+    switch (step) {
+      case 1:
+        try {
+          this.state.apetizers.map(main => (
+            this.outside(main)
+          ))
+        } catch (err) {
+          console.log(err)
+        }
+        break;
 
+      case 2:
+        try {
+          this.state.mainCourses.map(main => (
+            this.outside(main)
+          ))
+        } catch (err) {
+          console.log(err)
+        }
+        break;
+
+      case 3:
+        try {
+          this.state.desserts.map(main => (
+            this.outside(main)
+          ))
+        } catch (err) {
+          console.log(err)
+        }
+        break;
+
+      case 4:
+        try {
+          this.state.drinks.map(main => (
+            this.outside(main)
+          ))
+        } catch (err) {
+          console.log(err)
+        }
+        break;
+
+      default:
+        console.log("switch case default")
+        break;
+    }
+
+  }
+ select = () => {
+
+ }
+  async componentDidMount() {
+    let newState = this.props.location.state;
+    let {current} = this.state;
+    this.setState({ ...newState },() => {
+      this.switchIt(current)
+    })
+  }
+
+  outside = (id) => {
+    API.getDetails(id)
+      .then(res => this.setState({ result: [...this.state.result, res.data] }))
+      .catch(err => console.log(err))
+    console.log(this.state.result)
+  }
+  
+
+  prevStep = () => {
+    this.setState({ result: [] })
+    const { current } = this.state;
+    const { selectedSteps } = this.state;
+    const reducedSteps = selectedSteps.filter(item => { return item !== current - 1 })
+    if(current!=1){
+    this.setState({ current: current - 1, selectedSteps: reducedSteps }, ()=> {
+      this.switchIt(current-1)
+    })
+  } else {
+    this.setState({ current: 4}, ()=> {
+      this.switchIt(4)
+    })
+  }
+  }
 
   render() {
-   
-
-
-
     return (
-
+      <Container fluid>
       <div>
         <h1>MainPage</h1>
-        <h2> {console.log("Main Page", this.state)}</h2>
-        {this.state.result.map(name=>(<h1>{name.item}</h1>))}
-        
-        <button onClick={this.nextStep}>NExt Step</button>
-        <button onClick={this.prevStep}>NExt Step</button>
-
-          
-
+        <h2> {console.log(this.state.result)}</h2>
+        {this.state.result.map(item=> {return <h1>{item.item}</h1>})} 
+        <Row>
+          <Col size="md-6">
+            <Carousel {...this.state.result[0]}></Carousel>
+          </Col>
+        </Row>
+        {/* buttons */}
+        <button onClick={this.select}>Select</button>
+        <button onClick={this.nextStep}>Skip</button>
+        <button onClick={this.prevStep}>Back</button>
       </div>
+      </Container>
     );
   }
 }

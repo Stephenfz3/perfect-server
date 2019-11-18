@@ -23,7 +23,7 @@ class Jumbotron extends Component {
     <br/>
    
   <p>To start exploring restaurant's favorite reccomendations just press "Start</p>
-  <Link className="btn btn-primary btn-lg" to="/login" role="button">Start</Link>
+  <Link className ="btn btn-primary btn-lg" to="/login" role="button">Start</Link>
 </span>
 
 </div> 

@@ -9,7 +9,8 @@ import {BrowserRouter as Router, Route,Switch} from 'react-router-dom';
 import SignUpPage from './Pages/SignUpPage';
 import DrinkFoodPage from './Pages/DrinkFoodPage';
 import foodpage from "./Pages/FoodPage/index"
-import Login from './components/containers/LoginPage'; 
+import drinkpage from "./Pages/DrinkPage"
+import Login from './Pages/LogInPage'; 
 import Navbar from './components/Navbar';
 import MainPage from "./Pages/MainPage"
 import Footer from './components/Footer'
@@ -61,6 +62,7 @@ class App extends Component
           <Route exact path="/signup" component={()=><SignUpPage session={this.state.session} /> } />
           <Route exact path="/drinkfood" component={()=><DrinkFoodPage session={this.state.session} /> } />
           <Route exact path="/foodpage" component={foodpage} />
+          <Route exact path="/drinkpage" component={drinkpage} />
           {!this.state.session&& <Route exact path="/login" component={()=><Login onLogin={this.signIn} />} />}
           <Route exact path="/foodpage/:id" component={MainPage} />
         </Switch>

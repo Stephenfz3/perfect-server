@@ -12,7 +12,7 @@ const menu = [
     subCategory: "Beer",
     description: "Stella Artois is a classic Belgian lager, golden in color with a floral, hop aroma, well-balanced fruity malty sweetness, crisp hop bitterness and a soft dry finish. All natural ingredients give Stella Artois a clean, crisp palate.",
     img:"",
-    video: "",
+    videoId: "ScatwNrAH_o",
     date: new Date(Date.now()), 
     price: 10
   },
@@ -23,7 +23,7 @@ const menu = [
     subCategory: "Beer",
     description: "Amber Waves Amber Ale focuses on the malts, but has a nice balance of hop character. Expect a light body with a nice toasted malt characteristic and slight fruitiness.",
     img:"",
-    video: "",
+    videoId: "OhdzCSooj2o",
     date: new Date(Date.now()),
     price: 10
   },
@@ -34,7 +34,7 @@ const menu = [
     subCategory: "wine",
     description: "This Cabernet Sauvignon welcomes you with aromas of cedar, dark cherry compote, and dried tobacco leaves. Deliciously balanced and laced with flavors of blackberry pie, cinnamon, and allspice, this wine maintains approachable tannins and shows through to a savory finish.",
     img:"",
-    video: "",
+    videoId: "",
     date: new Date(Date.now()),
     price: 10
   },
@@ -45,7 +45,7 @@ const menu = [
     subCategory: "wine",
     description: "The 2017 ARTEMIS Cabernet Sauvignon offers inviting aromas of ripe raspberry, boysenberry and dark cherry along with hints of cedar and spice. The mid-palate is pleasant and round with flavors of plum, dark chocolate, dried fruit and a touch of toasted oak. The finish is rich and lingering.",
     img:"",
-    video: "",
+    videoId: "adseCgsYSYs",
     date: new Date(Date.now()),
     price: 10
   },
@@ -56,7 +56,7 @@ const menu = [
     subCategory: "wine",
     description: "The 2016 Chardonnay is scented of baked pears, ripe apples and dried herbs with touches of cedar, and cinnamon toast. Full-bodied, rich and with a pleasantly oily texture, it is jam packed with ripe apple and toasty layers, finishing long.",
     img:"",
-    video: "",
+    videoId: "aQz65kt-0Sk",
     date: new Date(Date.now()),
     price: 10
   },
@@ -67,7 +67,7 @@ const menu = [
     subCategory: "wine",
     description: "Scarpetta Pinot Grigio showcases some of the best sites in Friuli-Venezia Giulia for this aromatic varietal — starting with the light, gravely soils of the Grave region. This gives it a crisp, clean minerality. Additionally, 30% of our Pinot Grigio is planted on 'Ponca' soil in the Colli Orientali on steep hillsides. The combination of the Grave and Colli Orientali let us produce a wine which has body, bright acidity, and great minerality.",
     img:"",
-    video: "",
+    videoId: "",
     date: new Date(Date.now()),
     price: 10
   },
@@ -78,7 +78,7 @@ const menu = [
     subCategory: "cocktail",
     description: "Makers Mark Old fashioned with sweet demarera sugar topped of with an fresh orange peel and a maraschino cherry",
     img:"",
-    video: "",
+    videoId: "",
     date: new Date(Date.now()),
     price: 10
   },
@@ -89,7 +89,7 @@ const menu = [
     subCategory: "cocktail",
     description: "Hornitos reposado tequila, Ancho Reyes, Triple Sec, charred jalapeno and fresh lime",
     img:"",
-    video: "",
+    videoId: "",
     date: new Date(Date.now()),
     price: 10
   },
@@ -100,7 +100,7 @@ const menu = [
     subCategory: "appetizer",
     description: "Earls famous dry ribs, savoury and seasoned with coarse salt and black pepper",
     img:"",
-    video: "",
+    videoId: "",
     date: new Date(Date.now()),
     price: 10
   },
@@ -111,7 +111,7 @@ const menu = [
     subCategory: "appetizer",
     description: "Sweet Atlantic lobster, avocado, jalapeño crema, pico de gallo",
     img:"",
-    video: "",
+    videoId: "",
     date: new Date(Date.now()),
     price: 10
   },
@@ -122,7 +122,7 @@ const menu = [
     subCategory: "entrees",
     description: "Tender pork, braised low and slow plated with blackened full breast of chicken, garlic butter with warm potato salad, smoky bacon, coleslaw ",
     img:"",
-    video: "",
+    videoId: "",
     date: new Date(Date.now()),
     price: 10
   },
@@ -133,7 +133,7 @@ const menu = [
     subCategory: "entrees",
     description: "Pan seared with caramelized onion, potato, cauliflower, basil puree, pesto, sweet pepper broth ",
     img:"",
-    video: "",
+    videoId: "",
     date: new Date(Date.now()),
     price: 10
   },
@@ -144,7 +144,7 @@ const menu = [
     subCategory: "desert",
     description: "Housemade warm chocolate cake drizzled with rich chocolate and toffee sauce, served with a scoop of vanilla gelato in a sugar candy basket",
     img:"",
-    video: "",
+    videoId: "",
     date: new Date(Date.now()),
     price: 10
   },
@@ -154,7 +154,7 @@ const menu = [
     category: "food",
     subCategory: "desert",
     description: "Fresh cheescake,cracker crust, whipped chantilly cream",
-    video: "",
+    videoId: "",
     img:"",
     date: new Date(Date.now()),
     price: 10
