@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import API from "../../utils/API";
+import ShoppingCart from '../../components/Carlos'
 // import DrinkFoodButtons from "../../Components/DrinkFoodButtons";
 
 
@@ -166,13 +167,9 @@ class Detail extends Component {
 
   render() {
    
+// this.setState({videos:url})
 
-
-
-    return (
-
-
-      <div>
+/*<div>
         <h1>MainPage</h1>
         <h2> {console.log("Main Page", this.state)}</h2>
         {this.state.result.map(name=>(<h1>{name.item}</h1>))}
@@ -182,8 +179,8 @@ class Detail extends Component {
 
           
 
-      </div>
-    );
+      </div>*/
+    return <ShoppingCart />
   }
 }
 

@@ -2,11 +2,9 @@
 import React, {Component} from 'react';
 import Api from '../../utils/API';
 import {Link} from 'react-router-dom';
-import '../LoginForm/loginform.css'
+import './loginform.css'
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBInput, MDBBtn, MDBIcon } from 'mdbreact';
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import "bootstrap-css-only/css/bootstrap.min.css";
-import "mdbreact/dist/css/mdb.css";
+
 
 
 class LoginForm extends Component
