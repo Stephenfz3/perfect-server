@@ -1,9 +1,11 @@
 
 .loginbody{
     background-image: url(http://shribhojnalaya.com/images/ban3.jpg);
-
+    height: 550px;
 }
-
+.loginbody{
+  padding-top:60px;
+}
 .form-elegant .font-small {
     font-size: 0.8rem; }
   

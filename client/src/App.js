@@ -12,6 +12,7 @@ import foodpage from "./Pages/FoodPage/index"
 import Login from './components/containers/LoginPage'; 
 import Navbar from './components/Navbar';
 import MainPage from "./Pages/MainPage"
+import Footer from './components/Footer'
 
 class App extends Component
 {
@@ -54,6 +55,7 @@ class App extends Component
       <Router>
       <div>
       <Navbar />
+    
         <Switch>
           <Route exact path="/" component={()=><HomePage session={this.state.session} /> } />
           <Route exact path="/signup" component={()=><SignUpPage session={this.state.session} /> } />
@@ -63,6 +65,7 @@ class App extends Component
           <Route exact path="/foodpage/:id" component={MainPage} />
         </Switch>
       </div>
+      <Footer />
     </Router>
       )
         // if(!this.state.typeOfFood)
