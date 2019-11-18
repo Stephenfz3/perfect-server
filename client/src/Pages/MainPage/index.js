@@ -167,9 +167,9 @@ class Detail extends Component {
 
   render() {
    
-// this.setState({videos:url})
 
-/*<div>
+
+return <div>
         <h1>MainPage</h1>
         <h2> {console.log("Main Page", this.state)}</h2>
         {this.state.result.map(name=>(<h1>{name.item}</h1>))}
@@ -177,10 +177,10 @@ class Detail extends Component {
         <button onClick={this.nextStep}>NExt Step</button>
         <button onClick={this.prevStep}>NExt Step</button>
 
-          
+          <ShoppingCart />
 
-      </div>*/
-    return <ShoppingCart />
+      </div>
+    
   }
 }
 

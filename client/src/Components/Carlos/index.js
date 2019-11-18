@@ -186,7 +186,7 @@ class ShoppingCart extends Component {
           <Menu menu={this.state.menu}/>;
           
         <List addToCart={this.addToCart} handleClick={this.handleClick} />
-        <ReactPlayer url={video} playing />
+        {/* <ReactPlayer url={video} playing /> */}
         <Cart items={this.state.cart} removeFromCart={this.removeFromCart} />
       </div>
     </div>
