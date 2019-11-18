@@ -10,7 +10,7 @@ import SignUpPage from './Pages/SignUpPage';
 import DrinkFoodPage from './Pages/DrinkFoodPage';
 import foodpage from "./Pages/FoodPage/index"
 import drinkpage from "./Pages/DrinkPage"
-import Login from './components/containers/LoginPage'; 
+import Login from './Pages/LogInPage'; 
 import Navbar from './components/Navbar';
 import MainPage from "./Pages/MainPage"
 
