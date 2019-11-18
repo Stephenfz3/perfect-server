@@ -5,37 +5,31 @@ class Detail extends Component {
 
   state = {
     current: 1,
-    nextStep: 2,
     selectedSteps: [1,3],
-    skipped: [],
     result: []
   }
 
 
-  // selectedSteps: selectedSteps.filter(step=>{return step !==current-1})
 
   nextStep = () => {
     let { current } = this.state;
     let { selectedSteps } = this.state;
-    let { nextStep } = this.state
     this.setState({ result: [] })
 
     if (current > 4 ) {
       console.log("YOU fiLLED YOUR CART")
       return;
     } else if (selectedSteps.includes(current+1)) {
-      this.setState({ current: current +2, nextStep: nextStep + 2 }, () => {
+      this.setState({ current: current +2}, () => {
         this.switchIt(current+2);
-        // console.log("Line 30, current stage is: ", current)
         console.log(selectedSteps.includes(current))
       })
  
     } else {
       
-      this.setState({ current: current+1, skipped: [...this.state.skipped, current], nextStep: nextStep+1 }, () => {
+      this.setState({ current: current+1}, () => {
         this.switchIt(current+1);
         console.log(selectedSteps.includes(current))
-      // console.log("Line 26 current stage is: ", current)
       })
     } 
   }
@@ -89,7 +83,9 @@ class Detail extends Component {
     }
 
   }
+ select = () => {
 
+ }
   async componentDidMount() {
     let newState = this.props.location.state;
     let {current} = this.state;
@@ -104,21 +100,27 @@ class Detail extends Component {
       .catch(err => console.log(err))
     console.log(this.state.result)
   }
+  
 
   prevStep = () => {
     this.setState({ result: [] })
     const { current } = this.state;
     const { selectedSteps } = this.state;
     const reducedSteps = selectedSteps.filter(item => { return item !== current - 1 })
-    this.setState({ current: current - 1, selectedSteps: reducedSteps });
+    this.setState({ current: current - 1, selectedSteps: reducedSteps }, ()=> {
+      this.switchIt(current-1)
+    });
   }
 
   render() {
     return (
       <div>
         <h1>MainPage</h1>
-        <h2> {console.log("Main Page", this.state)}</h2>
-        {this.state.result.map((name, index) => (<h1 key={index}>{name.item}</h1>))}
+        <h2> {console.log(this.state.result)}</h2>
+        <h6>{this.state.result.map(item=> {return <h1>{item.item}</h1>})}
+          </h6> 
+
+        <button onClick={this.select}>Select</button>
 
         <button onClick={this.nextStep}>Skip</button>
         <button onClick={this.prevStep}>Back</button>
