@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import API from "../../utils/API";
+import Carousel from "../../Components/Carousel"
+import { Col, Row, Container } from "../../Components/Grid"
 
 class Detail extends Component {
 
@@ -128,16 +130,22 @@ class Detail extends Component {
 
   render() {
     return (
+      <Container fluid>
       <div>
         <h1>MainPage</h1>
-        <h2> {console.log(this.state)}</h2>
-        <h6>{this.state.result.map(item=>{return <h1>{item.item}</h1>})}
-</h6>
+        <h2> {console.log(this.state.result)}</h2>
+        {this.state.result.map(item=> {return <h1>{item.item}</h1>})} 
+        <Row>
+          <Col size="md-6">
+            <Carousel {...this.state.result[0]}></Carousel>
+          </Col>
+        </Row>
+        {/* buttons */}
         <button onClick={this.select}>Select</button>
-
         <button onClick={this.nextStep}>Skip</button>
         <button onClick={this.prevStep}>Back</button>
       </div>
+      </Container>
     );
   }
 }
