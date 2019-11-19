@@ -1,6 +1,7 @@
 import React from "react";
-import Youtube from "react-youtube"
-
+import AddButton from "../Carlos/addButton";
+ import Youtube from "react-youtube";
+import BackButton from "../Buttons/BackButton"
 function Corousel(props) {
   return (
 <div className="bd-example">
@@ -16,6 +17,9 @@ function Corousel(props) {
         <Youtube videoId={item.videoId} className="d-block w-100" alt="..."/>
           <h5>{item.item}</h5>
           <p>{item.description}</p>
+          <AddButton onClick={props.addToCart} handleClick={props.handleClick} />
+          {/* <SkipButton onClick={props.nextStep} /> */}
+          <BackButton onClick={props.prevStep} />
       </div>)}
 
       <a class="carousel-control-prev" onClick={props.onPrevious} role="button" data-slide="prev">

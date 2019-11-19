@@ -13,6 +13,29 @@ class Detail extends Component {
     currentSlide:0
   }
 
+
+  addToCart = (item) => {
+    const cart = [...this.state.cart, item]
+    this.setState({ cart })
+    this.props.next();
+    
+  }
+
+  handleClick = e => {
+    if (!e.target.id) {
+      const videoIndex = 0;
+
+      this.setState({
+        videoIndex
+      });
+    }
+    const videoIndex = e.target.id
+
+    this.setState({
+      videoIndex
+    });
+  };
+
   nextStep = () => {
     let { current } = this.state;
     let {skipped} = this.state;

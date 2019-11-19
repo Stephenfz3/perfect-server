@@ -24,6 +24,7 @@ router
       .get(function(req,res){
         db.Menu
         .findById(req.params.id)
+        .findAll({})
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err))
       })
