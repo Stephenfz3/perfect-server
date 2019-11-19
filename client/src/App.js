@@ -10,8 +10,8 @@ import SignUpPage from './Pages/SignUpPage';
 import DrinkFoodPage from './Pages/DrinkFoodPage';
 import foodpage from "./Pages/FoodPage/index"
 import drinkpage from "./Pages/DrinkPage"
-import Login from './Pages/LogInPage'; 
-import Navbar from './components/Navbar';
+import Login from './Components/containers/LoginPage'; 
+import Navbar from './Components/Navbar';
 import MainPage from "./Pages/MainPage"
 
 class App extends Component
