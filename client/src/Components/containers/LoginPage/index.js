@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component} from './node_modules/react';
 import LoginForm from '../../LogInForm';
 
 class Login extends Component 

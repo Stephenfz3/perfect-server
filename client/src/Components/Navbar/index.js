@@ -1,6 +1,6 @@
-import React from 'react'
+import React from './node_modules/react'
 
-import '../Navbar/navbar.css'
+import './navbar.css'
 
 
 
