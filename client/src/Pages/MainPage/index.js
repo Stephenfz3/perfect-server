@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import API from "../../utils/API";
-import Carousel from "../../components/Carousel"
-import { Col, Row, Container } from "../../components/Grid"
+import Carousel from "../../Components/Carousel"
+import { Col, Row, Container } from "../../Components/Grid"
 
 class Detail extends Component {
 
@@ -57,7 +57,7 @@ class Detail extends Component {
 
       case 2:
         try {
-          this.state.mainCourse.forEach(main => {
+          this.state.mainCourses.forEach(main => {
             this.outside(main)
         })
         } catch (err) {
