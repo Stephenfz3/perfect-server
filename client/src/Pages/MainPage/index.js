@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import API from "../../utils/API";
-import Carousel from "../../Components/Carousel"
-import { Col, Row, Container } from "../../Components/Grid"
+import Carousel from "../../components/Carousel"
+import { Col, Row, Container } from "../../components/Grid"
 
 class Detail extends Component {
 
@@ -96,7 +96,7 @@ class Detail extends Component {
  select = () => {
 
  }
-  async componentDidMount() {
+   componentDidMount() {
     let newState = this.props.location.state;
     let {current} = this.state;
     this.setState({ ...newState },() => {
@@ -126,6 +126,10 @@ class Detail extends Component {
       this.switchIt(4)
     })
   }
+  };
+
+  carouselIndex=()=>{
+  
   }
 
   render() {
@@ -134,10 +138,12 @@ class Detail extends Component {
       <div>
         <h1>MainPage</h1>
         <h2> {console.log(this.state.result)}</h2>
-        {this.state.result.map(item=> {return <h1>{item.item}</h1>})} 
+        {/* {this.state.result.map(item=> {return })}  */}
         <Row>
           <Col size="md-6">
-            <Carousel {...this.state.result[0]}></Carousel>
+            <Carousel onClick={this.nextStep} {...this.state.result[0]}></Carousel>
+           
+
           </Col>
         </Row>
         {/* buttons */}
