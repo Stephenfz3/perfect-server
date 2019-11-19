@@ -5,7 +5,7 @@ import BackButton from "../Buttons/BackButton"
 function Corousel(props) {
   return (
 <div className="bd-example">
-  <div id="carouselExampleCaptions" className="carousel slide" data-ride="carousel">
+  <div id="carouselExampleCaptions" className="carousel" data-ride="">
     <ol className="carousel-indicators">
       <li data-target="1" data-slide-to="0" className="active"></li>
       <li data-target="1" data-slide-to="1"></li>
@@ -22,14 +22,14 @@ function Corousel(props) {
           <BackButton onClick={props.prevStep} />
       </div>)}
 
-      <a class="carousel-control-prev" onClick={props.onPrevious} role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
+      <a className="carousel-control-prev" onClick={props.onPrevious} role="button" data-slide="prev">
+    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span className="sr-only">Previous</span>
   </a>
 
-  <a class="carousel-control-next" onClick={props.onNext} role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
+  <a className="carousel-control-next" onClick={props.onNext} role="button" data-slide="next">
+    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+    <span className="sr-only">Next</span>
   </a>
   </div>
 </div>

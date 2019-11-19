@@ -162,6 +162,9 @@ class Detail extends Component {
         <h1>MainPage</h1>
         <h2> {console.log(this.state.result)}</h2>
         <Row>
+          <Col size="md-3">
+        <ShoppingCart next={this.nextStep}/>
+          </Col>
           <Col size="md-6">
             <Carousel result={this.state.result} currentSlide={this.state.currentSlide} onNext={()=>this.setState({currentSlide:this.state.currentSlide<this.state.result.length-1?this.state.currentSlide+1:0})} onPrevious={()=>this.setState({currentSlide:this.state.currentSlide>0?this.state.currentSlide-1:this.state.result.length-1})}></Carousel>
           </Col>
@@ -170,8 +173,7 @@ class Detail extends Component {
         <button onClick={this.select}>Select</button>
         <button onClick={this.nextStep}>Skip</button>
         <button onClick={this.prevStep}>Back</button>
-      </div>
-     <ShoppingCart next={this.nextStep}/>
+      </div> 
       </Container>
     );
   }
