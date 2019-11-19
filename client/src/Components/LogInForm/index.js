@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 import Api from '../../utils/API';
 import {Link} from 'react-router-dom';
-import './loginform.css'
+import '../LogInForm/loginform.css'
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBInput, MDBBtn, MDBIcon } from 'mdbreact';
 
 
