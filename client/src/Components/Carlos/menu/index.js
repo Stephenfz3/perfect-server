@@ -2,9 +2,6 @@ import React, {Component} from 'react';
 import MenuItems from '../menuItems'
 
 class Menu extends Component {
- 
-
-
 
     // eslint-disable-next-line no-useless-constructor
     constructor(props){

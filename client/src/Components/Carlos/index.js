@@ -7,9 +7,6 @@ import Detail from "../../Pages/MainPage"
 
 class ShoppingCart extends Component {
 
-
-
-
   constructor(props) {
     super(props)
     this.state = {

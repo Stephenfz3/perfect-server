@@ -4,7 +4,7 @@ import Youtube from "react-youtube"
 function Corousel(props) {
   return (
 <div className="bd-example">
-  <div id="carouselExampleCaptions" className="carousel slide" data-ride="carousel">
+  <div id="carouselExampleCaptions" className="carousel" data-ride="">
     <ol className="carousel-indicators">
       <li data-target="1" data-slide-to="0" className="active"></li>
       <li data-target="1" data-slide-to="1"></li>
