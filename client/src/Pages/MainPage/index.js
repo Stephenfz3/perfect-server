@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import API from "../../utils/API";
-import Carousel from "../../components/Carousel"
-import { Col, Row, Container } from "../../components/Grid"
+import Carousel from "../../Components/Carousel"
+import { Col, Row, Container } from "../../Components/Grid"
 
 class Detail extends Component {
 
@@ -9,7 +9,8 @@ class Detail extends Component {
     current: 1,
     selectedSteps: [1,3],
     result: [],
-    skipped: []
+    skipped: [],
+    currentSlide:0
   }
 
   nextStep = () => {
@@ -116,7 +117,7 @@ class Detail extends Component {
     const { current } = this.state;
     const { selectedSteps } = this.state;
     const reducedSteps = selectedSteps.filter(item => { return item !== current - 1 })
-    if(current!=1){
+    if(current!==1){
     this.setState({ current: current - 1, selectedSteps: reducedSteps }, ()=> {
       this.switchIt(current-1)
     })
@@ -135,7 +136,7 @@ class Detail extends Component {
         <h2> {console.log(this.state.result)}</h2>
         <Row>
           <Col size="md-6">
-            <Carousel result={this.state.result}></Carousel>
+            <Carousel result={this.state.result} currentSlide={this.state.currentSlide} onNext={()=>this.setState({currentSlide:this.state.currentSlide<this.state.result.length-1?this.state.currentSlide+1:0})} onPrevious={()=>this.setState({currentSlide:this.state.currentSlide>0?this.state.currentSlide-1:this.state.result.length-1})}></Carousel>
           </Col>
         </Row>
         {/* buttons */}

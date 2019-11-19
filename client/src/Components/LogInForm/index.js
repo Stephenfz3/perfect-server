@@ -1,12 +1,10 @@
 /* eslint-disable no-useless-constructor */
-import React, {Component} from './node_modules/react';
+import React, {Component} from 'react';
 import Api from '../../utils/API';
-import {Link} from './node_modules/react-router-dom';
+import {Link} from 'react-router-dom';
 import './loginform.css'
-import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBInput, MDBBtn, MDBIcon } from './node_modules/mdbreact';
-import "./node_modules/@fortawesome/fontawesome-free/css/all.min.css";
-import "./node_modules/bootstrap-css-only/css/bootstrap.min.css";
-import "./node_modules/mdbreact/dist/css/mdb.css";
+import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBInput, MDBBtn, MDBIcon } from 'mdbreact';
+
 
 
 class LoginForm extends Component
@@ -74,7 +72,7 @@ class LoginForm extends Component
                 <MDBRow className="d-flex align-items-center mb-4 mt-5">
                   <MDBCol md="5" className="d-flex align-items-start">
                     <div className="text-center">
-                    <Link onClick={this.login} class="btn btn-primary" to="/drinkfood" role="button">Login</Link>
+                    <Link onClick={this.login} className="btn btn-primary" to="/drinkfood" role="button">Login</Link>
                        
                     </div>
                   </MDBCol>
