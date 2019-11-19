@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import API from "../../utils/API";
 import Carousel from "../../Components/Carousel"
 import { Col, Row, Container } from "../../Components/Grid"
-
+import ShoppingCart from "../../Components/Carlos"
 class Detail extends Component {
 
   state = {
@@ -145,6 +145,7 @@ class Detail extends Component {
         <button onClick={this.nextStep}>Skip</button>
         <button onClick={this.prevStep}>Back</button>
       </div>
+     <ShoppingCart next={this.nextStep}/>
       </Container>
     );
   }
