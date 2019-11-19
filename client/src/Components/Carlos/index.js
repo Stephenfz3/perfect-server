@@ -3,6 +3,7 @@ import List from "./list";
 import Cart from "./cart";
 import ReactPlayer from 'react-player';
 import Menu from './menu';
+import Detail from "../../Pages/MainPage"
 
 class ShoppingCart extends Component {
 
@@ -158,6 +159,8 @@ class ShoppingCart extends Component {
   addToCart = (item) => {
     const cart = [...this.state.cart, item]
     this.setState({ cart })
+    this.props.next();
+    
   }
 
   handleClick = e => {
