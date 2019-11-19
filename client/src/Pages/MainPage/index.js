@@ -9,16 +9,15 @@ class Detail extends Component {
     current: 1,
     selectedSteps: [1,3],
     result: [],
-    skipped: []
+    skipped: [],
+    currentSlide:0
   }
-
-
 
   nextStep = () => {
     let { current } = this.state;
     let {skipped} = this.state;
     let { selectedSteps } = this.state;
-    this.setState({ result: [] })
+    this.setState({ result: [],currentStep:this.state.currentStep+1 })
 
     if (current >= 4 && skipped.length > 0) {
       this.setState({current: skipped[0], skipped: skipped.filter(item => { return item !== item[0] })},()=>{
@@ -45,13 +44,12 @@ class Detail extends Component {
   }
 
   switchIt = (step) => {
-
     switch (step) {
       case 1:
         try {
-          this.state.apetizers.map(main => (
+          this.state.apetizers.forEach(main => {
             this.outside(main)
-          ))
+        })
         } catch (err) {
           console.log(err)
         }
@@ -59,9 +57,9 @@ class Detail extends Component {
 
       case 2:
         try {
-          this.state.mainCourses.map(main => (
+          this.state.mainCourse.forEach(main => {
             this.outside(main)
-          ))
+        })
         } catch (err) {
           console.log(err)
         }
@@ -69,9 +67,9 @@ class Detail extends Component {
 
       case 3:
         try {
-          this.state.desserts.map(main => (
+          this.state.desserts.forEach(main => {
             this.outside(main)
-          ))
+        })
         } catch (err) {
           console.log(err)
         }
@@ -79,9 +77,9 @@ class Detail extends Component {
 
       case 4:
         try {
-          this.state.drinks.map(main => (
+          this.state.drinks.forEach(main => {
             this.outside(main)
-          ))
+        })
         } catch (err) {
           console.log(err)
         }
@@ -106,7 +104,9 @@ class Detail extends Component {
 
   outside = (id) => {
     API.getDetails(id)
-      .then(res => this.setState({ result: [...this.state.result, res.data] }))
+      .then(res => {
+        this.setState({ result: [...this.state.result, res.data] })
+      })
       .catch(err => console.log(err))
     console.log(this.state.result)
   }
@@ -117,7 +117,7 @@ class Detail extends Component {
     const { current } = this.state;
     const { selectedSteps } = this.state;
     const reducedSteps = selectedSteps.filter(item => { return item !== current - 1 })
-    if(current!=1){
+    if(current!==1){
     this.setState({ current: current - 1, selectedSteps: reducedSteps }, ()=> {
       this.switchIt(current-1)
     })
@@ -134,10 +134,9 @@ class Detail extends Component {
       <div>
         <h1>MainPage</h1>
         <h2> {console.log(this.state.result)}</h2>
-        {this.state.result.map(item=> {return <h1>{item.item}</h1>})} 
         <Row>
           <Col size="md-6">
-            <Carousel {...this.state.result[0]}></Carousel>
+            <Carousel result={this.state.result} currentSlide={this.state.currentSlide} onNext={()=>this.setState({currentSlide:this.state.currentSlide<this.state.result.length-1?this.state.currentSlide+1:0})} onPrevious={()=>this.setState({currentSlide:this.state.currentSlide>0?this.state.currentSlide-1:this.state.result.length-1})}></Carousel>
           </Col>
         </Row>
         {/* buttons */}
