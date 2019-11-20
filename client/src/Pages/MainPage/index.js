@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import API from "../../utils/API";
-import Carousel from "../../Components/Carousel"
-import { Col, Row, Container } from "../../Components/Grid"
+import Carousel from "../../components/Carousel"
+import { Col, Row, Container } from "../../components/Grid"
 
 class Detail extends Component {
 
