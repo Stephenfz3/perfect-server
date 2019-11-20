@@ -16,6 +16,7 @@ class Cart extends Component {
       }
     
       render(){
+          console.log("OVERHERE BRO"+this.props.items)
 if(this.props.items === 0){
     return <div id="cart">
         <p>Cart is empty</p>
@@ -38,7 +39,7 @@ if(this.props.items === 0){
             <RemoveButton removeFromCart={this.props.removeFromCart}/>
             {/* <RemoveButton /> */}
             </td>
-    <td>{item.name}</td>
+    <td>{item.item}</td>
     <td>{item.type}</td>
     <td>${item.price}</td>    
     </tr>

@@ -23,7 +23,8 @@ class App extends Component
             typeOfFood:null,
             currentCategory:null,
             order:[],
-            session:null
+            session:null,
+            
 
         }
     }
