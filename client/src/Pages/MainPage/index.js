@@ -3,6 +3,8 @@ import API from "../../utils/API";
 import Carousel from "../../Components/Carousel"
 import { Col, Row, Container } from "../../Components/Grid"
 import ShoppingCart from "../../Components/Carlos"
+import List from "../../Components/Carlos/list"
+import Cart from"../../Components/Carlos/cart"
 class Detail extends Component {
 
   state = {
@@ -10,7 +12,10 @@ class Detail extends Component {
     selectedSteps: [1,3],
     result: [],
     skipped: [],
-    currentSlide:0
+    currentSlide:0,
+    itemId:0,
+    cart:[],
+    fullmenu:false,
   }
 
   nextStep = () => {
@@ -128,18 +133,59 @@ class Detail extends Component {
   }
   }
 
+  addToCart = (item) => {
+    const cart = [...this.state.cart, item]
+    this.setState({ cart })
+    // this.props.next();
+    
+  }
+
+  removeFromCart = (index) => {
+    const cart = [...this.state.cart]
+    cart.splice(index, 1)
+    this.setState({ cart })  }
+
+  
+    display = ()=> {
+if(this.state.fullmenu===false){
+const fullmenu=true
+this.setState({ fullmenu }) 
+
+}
+else{
+  const fullmenu=false
+  this.setState({ fullmenu }) 
+}
+    }
+
+    
+  // selectButton = (e) => {
+  //   e.preventDefault();
+  //   alert(e.target.value)
+  //   selectButton={this.selectButton} 
+//     let ID = e.target.value
+// this.setState({itemId:ID},() =>{
+//   alert(this.state.itemId + " " + " STATE IS")
+// }
+// )
+  // }
+
   render() {
+   
     return (
       <Container fluid>
       <div>
         <h1>MainPage</h1>
+        <button onClick={this.display}>FULL MENU</button>
         <h2> {console.log(this.state.result)}</h2>
         <Row>
           <Col size="md-3">
-        <ShoppingCart next={this.nextStep}/>
+        {/* {this.state.fullmenu&&<ShoppingCart next={this.nextStep}/>} */}
+        {this.state.fullmenu&&<List addToCart={this.addToCart} next={this.nextStep}/>}
+        <Cart items={this.state.cart} removeFromCart={this.removeFromCart} />
           </Col>
           <Col size="md-6">
-            <Carousel result={this.state.result} currentSlide={this.state.currentSlide} onNext={()=>this.setState({currentSlide:this.state.currentSlide<this.state.result.length-1?this.state.currentSlide+1:0})} onPrevious={()=>this.setState({currentSlide:this.state.currentSlide>0?this.state.currentSlide-1:this.state.result.length-1})}></Carousel>
+            <Carousel addToCart={this.addToCart} result={this.state.result} currentSlide={this.state.currentSlide}  onNext={()=>this.setState({currentSlide:this.state.currentSlide<this.state.result.length-1?this.state.currentSlide+1:0})} onPrevious={()=>this.setState({currentSlide:this.state.currentSlide>0?this.state.currentSlide-1:this.state.result.length-1})}></Carousel>
           </Col>
         </Row>
         {/* buttons */}

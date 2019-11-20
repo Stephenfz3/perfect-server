@@ -1,7 +1,9 @@
 import React from "react";
 import Youtube from "react-youtube"
+import AddButton from "../Carlos/addButton";
 
 function Corousel(props) {
+  console.log("HERE"+props.result)
   return (
 <div className="bd-example">
   <div id="carouselExampleCaptions" className="carousel" data-ride="">
@@ -12,13 +14,21 @@ function Corousel(props) {
     </ol>
     
     <div className="carousel-inner">
-      {props.result.map((item,index)=><div key={`slide-${index}`} className={`carousel-item ${index===props.currentSlide&&'active'}`}>
+      {props.result.map((item,index)=>
+
+
+
+      <div key={`slide-${index}`} className={`carousel-item ${index===props.currentSlide&&'active'}`}>
+
+{console.log("It"+item.item)}
+
         <Youtube videoId={item.videoId} className="d-block w-100" alt="..."/>
           <h5>{item.item}</h5>
           <p>{item.description}</p>
+          <AddButton id={item._id} value={item} addToCart={props.addToCart} />
       </div>)}
 
-      <a className="carousel-control-prev" onClick={props.onPrevious} role="button" data-slide="prev">
+      <a  onClick={props.onPrevious} role="button" data-slide="prev">
     <span className="carousel-control-prev-icon" aria-hidden="true"></span>
     <span className="sr-only">Previous</span>
   </a>
