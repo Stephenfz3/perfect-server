@@ -117,6 +117,8 @@ class Detail extends Component {
   }
   
 
+  
+
   prevStep = () => {
     this.setState({ result: [] })
     const { current } = this.state;

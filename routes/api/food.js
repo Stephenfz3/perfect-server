@@ -25,7 +25,12 @@ router
         db.Menu
         .findById(req.params.id)
         .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err))
+        .catch(err => res.status(422).json(err));
+        
+        // db.Menu
+        // .find()
+        // .then(dbModel => res.json(dbModel))
+        // .catch(err => res.status(422).json(err))
       })
         // foodController.findOne
 

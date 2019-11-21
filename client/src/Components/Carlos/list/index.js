@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import AddButton from '../addButton';
-
+import SelectButton from '../../SelectButton';
 
 const items = [
     {item:"Stella",type:"Drink", price:8 },
@@ -41,7 +41,10 @@ return <tr key={index}>
         {/* <button onClick={()=> this.props.addToCart(item)}>Add to cart</button> */}
 {/* 
         <AddButton addToCart={this.props.addToCart} item={item} id={index} onClick={this.props.handleClick}/> */}
-        <AddButton id={item._id} value={item} addToCart={this.props.addToCart} />
+
+        {/* <AddButton id={item._id} value={item} addToCart={this.props.addToCart} /> */}
+
+        <SelectButton />
 
         </td>
 <td>{item.item}</td>
