@@ -5,10 +5,11 @@ import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, 
 import foodpage from '../FoodPage';
 import { Redirect } from 'react-router-dom';
 
+
 class DrinkFood extends Component {
     redirect = () => {
         //Better React Solution
-        window.location.replace("foodpage");
+        window.location.replace("foodPage");
         // console.log("Hello World!");
         //   return <Redirect to="/foodpage" />;
       };
@@ -16,6 +17,8 @@ class DrinkFood extends Component {
     render() {
         return (
             <div>
+
+
                 <div><h1>What are you in the mood for?</h1></div>
                 <div className="row col-12">
 
