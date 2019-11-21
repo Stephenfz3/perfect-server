@@ -5,7 +5,6 @@ import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, 
 import foodpage from '../FoodPage';
 import { Redirect } from 'react-router-dom';
 
-
 class DrinkFood extends Component {
     redirect = () => {
         //Better React Solution
@@ -19,6 +18,10 @@ class DrinkFood extends Component {
             <div>
 
 
+
+
+
+                
                 <div><h1>What are you in the mood for?</h1></div>
                 <div className="row col-12">
 
