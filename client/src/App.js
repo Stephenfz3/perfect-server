@@ -13,8 +13,8 @@ import foodpage from "./Pages/FoodPage/index"
 import drinkpage from "./Pages/DrinkPage"
 import Login from './Components/containers/LoginPage'; 
 import Navbar from './Components/Navbar';
-import MainPage from "./Pages/MainPage"
-import Footer from './components/Footer'
+import MainPage from "./Pages/MainPage";
+import Footer from './Components/Footer';
 
 class App extends Component
 {
