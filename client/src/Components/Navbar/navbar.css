@@ -1,5 +1,5 @@
 .navbar-brand{
-    font-family: 'Lobster Two', cursive;
+    font-family: 'Montserrat', sans-serif;
     ;
 
     font-size: 35px!important;
@@ -7,8 +7,8 @@
 }
 .navbar-nav{
     float: right!important;
-    font-family: 'Lobster Two', cursive;
-    font-size:25px;
+    font-family: 'Montserrat', sans-serif;
+    font-size:18px;
   
     font-weight: 600px;
 
