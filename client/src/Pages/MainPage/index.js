@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import API from "../../utils/API";
-import Carousel from "../../Components/Carousel";
-import { Col, Row, Container } from "../../Components/Grid";
-import ShoppingCart from "../../Components/Carlos";
+import Carousel from "../../Components/Carousel"
+import { Col, Row, Container } from "../../Components/Grid"
+import ShoppingCart from "../../Components/Carlos"
 import List from "../../Components/Carlos/list"
-import Cart from "../../Components/Carlos/cart";
-import "../MainPage/MainPage.css";
-import DisplayButton from "../../Components/displayMenuButton"
+import Cart from "../../Components/Carlos/cart"
+import "../MainPage/MainPage.css"
 
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol, MDBIcon } from 'mdbreact';
 
 class Detail extends Component {
 
   state = {
+
     current: 1,
     selectedSteps: [1],
     result: [],
@@ -24,6 +24,7 @@ class Detail extends Component {
     collapseID: "",
     name: "",
     details:[]
+    
 
   }
   toggleCollapse = collapseID => () =>
@@ -31,171 +32,14 @@ class Detail extends Component {
       collapseID: prevState.collapseID !== collapseID ? collapseID : ""
     }));
 
-
-    menuApi = (id)=>{
-      API.getDetails(id)
-        .then(res => {
-          this.setState({ details: [...this.state.details, res.data] })
-        })
-        .catch(err => console.log(err))
-       console.log(this.state.details)
-    };
-  
-  
-  
-    switchTwo= (step) => {
-      switch(step){
-   
-       case 1:
-           try {
-             console.log("STATEEEEE"+this.state.result[0])
-             this.state.moreApps.forEach(main => {
-               this.menuApi(main)
-             })
-           } catch (err) {
-             console.log(err)
-           }
-           break;
-   
-         case 2:
-           try {
-             this.state.moreMain.forEach(main => {
-               this.menuApi(main)
-             })
-           } catch (err) {
-             console.log(err)
-           }
-           break;
-   
-         case 3:
-           try {
-             this.state.moreDesserts.forEach(main => {
-               this.menuApi(main)
-             })
-           } catch (err) {
-             console.log(err)
-           }
-           break;
-   
-         case 4:
-           try {
-             this.state.moreDrinks.forEach(main => {
-               this.menuApi(main)
-             })
-           } catch (err) {
-             console.log(err)
-           }
-           break;
-   
-         default:
-           console.log("switch case default")
-           break;
-   
-      }
-    }
-  
-  
-   displayMenu = () => {
-        let { current } = this.state;
-        if(current===1){
-          console.log(this.state.details)
-          this.setState({details:[]}, ()=>{
-            this.switchTwo(current)
-            console.log(this.state.current, "102")
-          })
-        } else if (current===2){
-          this.setState({details:[]}, ()=>{
-            this.switchTwo(current)
-            console.log(this.state.details, "104")
-          })
-
-           
-        } else if (current===3){
-          this.setState({details:[]}, ()=>{
-            this.switchTwo(current)
-            console.log(this.state.details, "115")
-          })
-
-        } else if (current===4){
-          this.setState({details:[]},()=>this.switchTwo(current))
-        }
-    }
-
-
-  
-
-    outside = (id) => {
-      API.getDetails(id)
-        .then(res => {
-          this.setState({ result: [...this.state.result, res.data] })
-        })
-        .catch(err => console.log(err))
-      console.log(this.state)
-    };
-
-    switchIt = (step) => {
-      switch (step) {
-        case 1:
-          try {
-            this.setState({name: "Appetizers"})
-            this.state.apetizers.forEach(main => {
-              this.outside(main)
-            })
-          } catch (err) {
-            console.log(err)
-          }
-          break;
-  
-        case 2:
-          try {
-            this.setState({name: "Main Courses"})
-            this.state.mainCourses.forEach(main => {
-              this.outside(main)
-            })
-          } catch (err) {
-            console.log(err)
-          }
-          break;
-  
-        case 3:
-          try {
-            this.setState({name: "Desserts"})
-            this.state.desserts.forEach(main => {
-              this.outside(main)
-            })
-          } catch (err) {
-            console.log(err)
-          }
-          break;
-  
-        case 4:
-          try {
-            this.setState({name: "Drinks"})
-            this.state.drinks.forEach(main => {
-              this.outside(main)
-            })
-          } catch (err) {
-            console.log(err)
-          }
-          break;
-  
-        default:
-          console.log("switch case default")
-          break;
-      }
-  
-    }
-
-
-
   nextStep = () => {
     let { current } = this.state;
     let { skipped } = this.state;
     let { selectedSteps } = this.state;
-    this.setState({ result: [], currentStep: this.state.currentStep + 1, fullmenu: false })
+    this.setState({ result: [], currentStep: this.state.currentStep + 1 })
 
     if (current >= 4 && skipped.length > 0) {
-      this.setState({ current: skipped[0], skipped: skipped.filter(item => { return item !== item[0] }), fullmenu: false }, () => {
+      this.setState({ current: skipped[0], skipped: skipped.filter(item => { return item !== item[0] }) }, () => {
         this.switchIt(skipped[0])
       })
       console.log("current > 4 && skipped.length > 0")
@@ -204,24 +48,75 @@ class Detail extends Component {
       return;
 
     } else if (selectedSteps.includes(current + 1)) {
-      this.setState({ current: current + 2, skipped: [...this.state.skipped, current],fullmenu: false }, () => {
+      this.setState({ current: current + 2, skipped: [...this.state.skipped, current] }, () => {
         this.switchIt(current + 2);
         console.log(selectedSteps.includes(current))
       })
 
     } else {
 
-      this.setState({ current: current + 1, skipped: [...this.state.skipped, current] ,fullmenu: false}, () => {
+      this.setState({ current: current + 1, skipped: [...this.state.skipped, current] }, () => {
         this.switchIt(current + 1);
         console.log(selectedSteps.includes(current))
       })
     }
   }
- 
-  
-  // select = () => {
 
-  // }
+  switchIt = (step) => {
+    switch (step) {
+      case 1:
+        try {
+          this.setState({name: "Appetizers"})
+          this.state.apetizers.forEach(main => {
+            this.outside(main)
+          })
+        } catch (err) {
+          console.log(err)
+        }
+        break;
+
+      case 2:
+        try {          
+          this.setState({name: "Main Course"})
+          this.state.mainCourses.forEach(main => {
+            this.outside(main)
+          })
+        } catch (err) {
+          console.log(err)
+        }
+        break;
+
+      case 3:
+        try {
+          this.setState({name: "Desserts"})
+          this.state.desserts.forEach(main => {
+            this.outside(main)
+          })
+        } catch (err) {
+          console.log(err)
+        }
+        break;
+
+      case 4:
+        try {
+          this.setState({name: "Drinks"})
+          this.state.drinks.forEach(main => {
+            this.outside(main)
+          })
+        } catch (err) {
+          console.log(err)
+        }
+        break;
+
+      default:
+        console.log("switch case default")
+        break;
+    }
+
+  }
+  select = () => {
+
+  }
   async componentDidMount() {
     let newState = this.props.location.state;
     let { current } = this.state;
@@ -230,19 +125,13 @@ class Detail extends Component {
     })
   }
 
-
-
-  
-
-  display = () => {
-    if (this.state.fullmenu === false) {
-      const fullmenu = true
-      this.setState({ fullmenu })
-    }
-    else {
-      const fullmenu = false
-      this.setState({ fullmenu })
-    }
+  outside = (id) => {
+    API.getDetails(id)
+      .then(res => {
+        this.setState({ result: [...this.state.result, res.data] })
+      })
+      .catch(err => console.log(err))
+    console.log(this.state.result)
   }
 
 
@@ -276,7 +165,17 @@ class Detail extends Component {
   }
 
 
-  
+  display = () => {
+    if (this.state.fullmenu === false) {
+      const fullmenu = true
+      this.setState({ fullmenu })
+
+    }
+    else {
+      const fullmenu = false
+      this.setState({ fullmenu })
+    }
+  }
 
 
   // selectButton = (e) => {
@@ -311,8 +210,7 @@ class Detail extends Component {
          
         <ul>
           <a onClick={this.display}><MDBIcon icon="bars" />  Full Menu </a>
-          {this.state.fullmenu && <List  details={this.state.details} addToCart={this.addToCart} next={this.nextStep} />} 
-          <DisplayButton displayMenu={this.displayMenu} display={this.display}></DisplayButton>
+          {this.state.fullmenu && <List addToCart={this.addToCart} next={this.nextStep} />} 
           <a><MDBIcon icon="address-book" />       Reservations</a>
           <a> <MDBIcon icon="user-check" />      Reviews</a>
           <a><MDBIcon icon="cocktail" />         Happy Hour Menu</a>
@@ -331,17 +229,6 @@ class Detail extends Component {
           <br/>
           <br/>
           <br/>
-
-
-
-          
-
-
-
-        
-
-
-          
           
         </MDBCardBody>
       
@@ -377,6 +264,7 @@ class Detail extends Component {
 \
               </Col>
             </Row>
+            {/* buttons */}
   
            
           </div>

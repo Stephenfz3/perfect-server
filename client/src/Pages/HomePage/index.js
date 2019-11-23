@@ -18,7 +18,8 @@ class Jumbotron extends Component {
 <div  className="jumbotron">
   <h2 className="welcome display-4">Welcome to the Perfect Server application</h2>
   <div className="bg">
-  <p className="p1 lead">This is a Virtual Server application. Created to aid in food drinks pairing based on customers preference.  is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+  <p className="p1 lead">
+This is a virtual server application. This app will guide you through a 5 star experience at a restaurant of your choosing. Here you will find everything you need, through interactive questions we create a flow of conversation that easily guides you to what you want, then shows you exactly what it looks like. A server or bartender will hold the item while explain it to you the way an expert would. It takes the guess work out of your ordering experience and gives you full confidence in your choices. Through high quality video and curated audio we give you a window into your potential future and give you the power to choose your own destiny. When it’s time to start exploring click the start button </p>
   </div>
   <span className="my-4">
     <br/>
