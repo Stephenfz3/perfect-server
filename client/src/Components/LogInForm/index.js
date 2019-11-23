@@ -49,7 +49,7 @@ class LoginForm extends Component
                   </a>
                 </MDBRow>
               </div>
-              <MDBCardBody className="mx-4 mt-4">
+              <MDBCardBody className="hi mx-4 mt-4">
                 <MDBInput  
                 label="Your email" group type="text" validate />
                 <MDBInput
@@ -60,11 +60,11 @@ class LoginForm extends Component
                   validate
                   containerClass="mb-0"
                 />
-                <p className="font-small grey-text d-flex justify-content-end">
+                <p className="hi font-small grey-text d-flex justify-content-end">
                   Forgot
                   <a
                     href="#!"
-                    className="dark-grey-text ml-1 font-weight-bold"
+                    className="hi dark-grey-text ml-1 font-weight-bold"
                   >
                     Password?
                   </a>
@@ -72,20 +72,12 @@ class LoginForm extends Component
                 <MDBRow className="d-flex align-items-center mb-4 mt-5">
                   <MDBCol md="5" className="d-flex align-items-start">
                     <div className="text-center">
-                    <Link onClick={this.login} className="btn btn-primary" to="/drinkfood" role="button">Login</Link>
-                       
+                    <Link onClick={this.login} className="btn btn-amber" to="/drinkfood" role="button">Login</Link>
+                 
                     </div>
                   </MDBCol>
                   <MDBCol md="7" className="d-flex justify-content-end">
-                    <p className="font-small grey-text mt-3">
-                      Don't have an account?
-                      <a
-                        href="#!"
-                        className="dark-grey-text ml-1 font-weight-bold"
-                      >
-                        Sign up
-                      </a>
-                    </p>
+                  
                    
                   </MDBCol>
                 </MDBRow>

@@ -16,6 +16,54 @@
   .box2{
       display: inline;
   }
-  body{
-      background-image: url("");
+  .body{
+      background-image: url("https://www.singleplatform.com/wp-content/uploads/2018/12/5-Tips-for-Improving-Restaurant-Ambiance.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
   }
+.hi{
+color:red;
+
+}
+
+
+li{
+    float: left;
+}
+a{
+
+    display: block;
+    padding-top:10px;
+    padding-bottom:10px;
+    text-align: left;
+    font-size:20px;
+    text-align: justify;
+    color:white;
+    
+}
+a:hover{
+    font-weight:bold;
+
+}
+.menucard{
+    background-color:rgba(0, 0, 0, 0.3);
+   
+}
+.cartcard{
+    background-color:rgba(0, 0, 0, 0.3);
+}
+.title{
+    text-align: center; 
+     color:white;
+}
+.title2{
+text-align: center;
+color:white;
+}
+ul{
+    color:white;
+}
+h1{
+    color:white;
+}

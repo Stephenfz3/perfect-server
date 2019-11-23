@@ -7,10 +7,12 @@ h1{
 h2{
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    padding-top: 0px;
+    padding-top: 40px;
 
 }
-
+.h1{
+    color:black;
+}
 
 .card1{
     padding-top:10px;
@@ -21,4 +23,14 @@ h2{
 }
 .img-fluid{
    height: 300px !important;
+}
+.aa{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+h6{
+    color:black;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    padding-top:10px;
 }

@@ -12,7 +12,7 @@ const Footer = () => {
         
         <div className="footer-copyright text-center py-4">
           <MDBContainer fluid>
-            &copy; {new Date().getFullYear()} Copyright: <a href="https://www.MDBootstrap.com"> PerfectServer </a>
+            &copy; {new Date().getFullYear()} Perfect Server <a href="https://www.MDBootstrap.com"> </a>
           </MDBContainer>
         </div>
       </MDBFooter>

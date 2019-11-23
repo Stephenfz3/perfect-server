@@ -1,0 +1,12 @@
+
+    .button {
+        font-family: 'Montserrat', sans-serif;
+        border-radius: 8px;
+        padding-top:2px;
+        padding-bottom: 0px;
+        
+      }
+      .icon:hover{
+        color:red;
+      }
+     

@@ -16,13 +16,8 @@ class DrinkFood extends Component {
     render() {
         return (
             <div>
-
-
-
-
-
-                
-                <div><h1>What are you in the mood for?</h1></div>
+              {this.props.session&&<h6>Welcome back, {this.props.session.name}</h6>}
+                <div><h1 className="h1">What are you in the mood for?</h1></div>
                 <div className="row col-12">
 
                     <div className="card1 offset-3">

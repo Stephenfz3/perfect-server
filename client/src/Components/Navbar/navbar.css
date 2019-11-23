@@ -3,7 +3,7 @@
     ;
 
     font-size: 35px!important;
-    
+    height:60px
 }
 .navbar-nav{
     float: right!important;
@@ -23,4 +23,5 @@
 }
 .bg-light {
     background-color:white !important;
+    
 }

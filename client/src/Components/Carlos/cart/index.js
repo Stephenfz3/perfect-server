@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import List from "../list";
 import AddButton from "../addButton"
 import RemoveButton from '../removeButton';
+import "./style.css"
+
+
 class Cart extends Component {
  
     constructor(props){
@@ -24,19 +27,19 @@ if(this.props.items === 0){
 }
 
         return <div id="cart">
-    <table border="1">
-        <tbody>
+    <table class="table">
+        <tbody className="">
         <tr>
-        <th>Remove</th>
-            <th>Item name</th>
-            <th>Item type</th>
-            <th>Item price</th>
+            <th>Edit</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Price</th>
         </tr>
         {this.props.items.map((item,index)=>{
     
     return <tr key={index}>
         <td>
-            <RemoveButton removeFromCart={this.props.removeFromCart}/>
+            <RemoveButton className="btn sm" removeFromCart={this.props.removeFromCart}/>
             {/* <RemoveButton /> */}
             </td>
     <td>{item.item}</td>
@@ -49,6 +52,11 @@ if(this.props.items === 0){
     <p>
         Total: ${this.total()}
     </p>
+
+    
+    
+
+
         </div>
     } 
      ;

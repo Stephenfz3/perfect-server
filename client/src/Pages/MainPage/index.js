@@ -7,13 +7,13 @@ import List from "../../Components/Carlos/list"
 import Cart from "../../Components/Carlos/cart"
 import "../MainPage/MainPage.css"
 
-import { MDBBtn, MDBCardBody, MDBContainer, MDBCol, MDBRow, MDBCollapse, MDBCollapseHeader, MDBCard, MDBIcon } from "mdbreact";
+import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol, MDBIcon } from 'mdbreact';
 
 class Detail extends Component {
 
   state = {
     current: 1,
-    selectedSteps: [1, 3],
+    selectedSteps: [1],
     result: [],
     skipped: [],
     currentSlide: 0,
@@ -184,23 +184,76 @@ class Detail extends Component {
   render() {
 
     return (
-      <div>
+      <div className="body">
   
 
         <Container fluid>
           <div className="box2">
-            <h1>Top 3 features for: {this.state.name}</h1>
-            <MDBBtn onClick={this.display}>Full Menu </MDBBtn>
+            <h1>Top features for: {this.state.name}</h1>
             <Row>
               <Col size="md-3">
-                {/* {this.state.fullmenu&&<ShoppingCart next={this.nextStep}/>} */}
-                {this.state.fullmenu && <List addToCart={this.addToCart} next={this.nextStep} />}
-                <Cart items={this.state.cart} removeFromCart={this.removeFromCart} />
+              <MDBCard className="menucard" style={{ width: "24rem" }}>
+        
+        <MDBCardBody>
+          <MDBCardTitle className="title">Features</MDBCardTitle>
+        
+        <MDBCardText>
+            
+         
+        <ul>
+          <a onClick={this.display}><MDBIcon icon="bars" />  Full Menu </a>
+          {this.state.fullmenu && <List addToCart={this.addToCart} next={this.nextStep} />} 
+          <a><MDBIcon icon="address-book" />       Reservations</a>
+          <a> <MDBIcon icon="user-check" />      Reviews</a>
+          <a><MDBIcon icon="cocktail" />         Happy Hour Menu</a>
+          <a><MDBIcon icon="globe-americas" />       Location</a>
+          <a> <MDBIcon icon="phone" />       Contact</a>
+          <a> <MDBIcon far icon="images" />      Gallery  </a>
+  
+        
+        </ul>
+
+        
+
+
+          </MDBCardText>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          
+        </MDBCardBody>
+      
+     
+        
+
+      </MDBCard>
+
               </Col>
               <Col size="md-6">
 
                 <Carousel next={this.nextStep} addToCart={this.addToCart} result={this.state.result} currentSlide={this.state.currentSlide} onNext={() => this.setState({ currentSlide: this.state.currentSlide < this.state.result.length - 1 ? this.state.currentSlide + 1 : 0 })} onPrevious={() => this.setState({ currentSlide: this.state.currentSlide > 0 ? this.state.currentSlide - 1 : this.state.result.length - 1 })}></Carousel>
 
+              </Col>
+              
+              
+              <Col size="">
+              <MDBCol>
+      <MDBCard className="cartcard" style={{ width: "22rem" }}>
+  
+        <MDBCardBody>
+          <MDBCardTitle className="title2">Cart</MDBCardTitle>
+          <MDBCardText>
+        
+          <Cart className="whatever col-2 offset-10"items={this.state.cart} removeFromCart={this.removeFromCart} />
+
+        
+          </MDBCardText>
+          
+        </MDBCardBody>
+      </MDBCard>
+    </MDBCol>
+\
               </Col>
             </Row>
             {/* buttons */}
@@ -213,9 +266,10 @@ class Detail extends Component {
 
 
 
-
-
-
+       
+<br/>
+<br/>
+<br/>
 
 
       </div>

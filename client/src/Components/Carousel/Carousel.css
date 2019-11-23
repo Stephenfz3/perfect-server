@@ -1,4 +1,42 @@
-.card1{
+.cardone{
 text-align: center;
+background-color:rgba(4, 1, 1, 0.4);
+color:white;
+
+}
+.addicon{
+    font-size: 40px;
+    padding-right:20px;
+}
+.addicon2{
+    font-size: 40px;
+    padding-left: 20px;
+}
+.addicon:hover{
+    color:green;
+}
+.addicon2:hover{
+    color:green;
+}
+.row{
+    text-align: center!important ;
+}
+h5{
+    padding-top:10px;
+  text-align: center;
+  color:white;
+}
+.a{
+    float:left;
+}
+.a:hover{
+    color:green; 
+}
+.p{
+padding-top:10px;
+color:white;
+}
+.parent{
+    background-image: url("http://digitalimagemakerworld.com/images/peach-wallpaper/37756779-peach-wallpaper.jpg")
 
 }

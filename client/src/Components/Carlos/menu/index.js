@@ -10,7 +10,7 @@ class Menu extends Component {
     render(){
 
 return <div>
-  <table border="1">
+  <table class="table" >
     <tbody>
     <tr>
         <th>Item</th>

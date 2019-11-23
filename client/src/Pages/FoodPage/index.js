@@ -36,7 +36,11 @@ class foodpage extends Component {
         console.log("over here"+this.state.foodPairings);
         return (
             <div>
-                    <div className="foodcategory"><h1>Choose a food category:</h1></div>
+                
+               
+
+
+                    <div className="foodcategory"><h2>Choose a food category:</h2></div>
                 {this.state.foodPairings.map((food, index) =>
 
                     <div className="card1 col-3 offset-">

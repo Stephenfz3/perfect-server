@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact';
-// import List from "./components/list"
+import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol, MDBIcon } from 'mdbreact';
+import "../addButton/addbutton.css"
+// import List from "./c/omponents/list"
 // import Cart from "./components/cart"
 
 
@@ -15,12 +16,14 @@ super(props)
 
 render() {
 console.log(this.props.value)
-    return <div>
+    return <div >
        
     {/* <button id={this.props.id} onClick={(event) => { this.props.addToCart(this.props.item)
         
         ; this.props.handleClick(event)}}>Add to cart</button> */}
-          <MDBBtn className="peach-gradient" id={this.props.id} onClick={(event) => { this.props.addToCart(this.props.value)}}>Add to cart</MDBBtn>
+   
+
+          <MDBIcon className="addbtn" id={this.props.id} onClick={(event) => { this.props.addToCart(this.props.value)}} icon="plus-circle" />
 
 
         

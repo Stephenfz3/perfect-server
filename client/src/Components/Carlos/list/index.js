@@ -25,13 +25,13 @@ render(){
 
 
     return <div id="items">
-<table border="1">
+<table class="table">
     <tbody>
     <tr>
         <th>Add</th>
-        <th>Item item</th>
-        <th>Item type</th>
-        <th>Item price</th>
+        <th>Item</th>
+        <th>Type</th>
+        <th>Price</th>
     </tr>
     {items.map((item,index)=>{
 {console.log("WELCOME TO THE JUNGLE"+item.item)}

@@ -1,5 +1,11 @@
 #cart {
     
-    width:48%;
-    margin:1%;
+    padding-left:0px;
+    
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color:white;
+}
+tr{
+    color:white;
 }
