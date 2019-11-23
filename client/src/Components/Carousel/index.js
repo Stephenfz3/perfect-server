@@ -6,10 +6,6 @@ import "../Carousel/Carousel.css"
 import Detail from "../../Pages/MainPage/index"
 
 function Corousel(props) {
-  console.log("HERE" + props.result)
-
-
-
 
   return (
     <div>
@@ -31,7 +27,6 @@ function Corousel(props) {
 
                       <div key={`slide-${index}`} className={`carousel-item ${index === props.currentSlide && 'active'}`}>
 
-                        {console.log("It" + item.item)}
 
                         <Youtube videoId={item.videoId} className="d-block w-100" alt="..." />
                         <h5>{item.item}</h5>

@@ -12,9 +12,7 @@ super(props)
 
     }
 
-
 render() {
-console.log(this.props.value)
     return <div>
        
     {/* <button id={this.props.id} onClick={(event) => { this.props.addToCart(this.props.item)
