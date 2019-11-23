@@ -3,7 +3,7 @@ import Youtube from "react-youtube"
 import AddButton from "../Carlos/addButton";
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact';
 import "../Carousel/Carousel.css"
-
+import Detail from "../../Pages/MainPage/index"
 
 function Corousel(props) {
   console.log("HERE" + props.result)
@@ -46,14 +46,17 @@ function Corousel(props) {
                       <span className="sr-only">Previous</span>
                     </a>
 
-                    <a className="carousel-control-next" onClick={props.onNext} role="button" data-slide="next">
+                    <a className="carousel-control-next"  role="button" data-slide="next">
                       <span className="carousel-control-next-icon" aria-hidden="true"></span>
                       <span className="sr-only">Next</span>
+                      
                     </a>
                   </div>
                
               </div>
-
+              <MDBBtn onClick={props.onPrevious} className="peach-gradient" >Previous</MDBBtn>
+              <MDBBtn onClick={props.onNext} className="peach-gradient" >Next</MDBBtn>
+              <MDBBtn className="peach-gradient" onClick={(event) => {props.next()}} >Next Category </MDBBtn>
             </MDBCardText>
           </MDBCardBody>
         </MDBCard>

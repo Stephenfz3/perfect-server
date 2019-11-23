@@ -16,8 +16,7 @@ const foodPairings=[
     image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkgs1aEiMKKKO88ncfJoHYv8s5swZtHNAZtOanONstVt_HJeYu&s",
     apetizers:[3,2,1],    
     description:"yay steaks",
-
-    mainCourses:[6,5,4],
+  mainCourses:[6,5,4],
     desserts:[7,8,9],
     drinks:[10,11,12]
 },
