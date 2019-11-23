@@ -69,7 +69,7 @@ class App extends Component
           <Route exact path="/drinkpage" component={drinkpage} />
         </Switch>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </Router>
       )
         // if(!this.state.typeOfFood)

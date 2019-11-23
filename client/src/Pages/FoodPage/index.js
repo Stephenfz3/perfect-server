@@ -4,6 +4,7 @@ import API from "../../utils/API";
 import { Link } from 'react-router-dom';
 import '../FoodPage/FoodPage.css'
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact';
+import DrinkFoodButtons from '../../Components/DrinkFoodButtons';
 class foodpage extends Component {
     constructor(props) {
         super(props)
@@ -42,12 +43,12 @@ class foodpage extends Component {
                         <MDBCol className="">
                             <MDBCard key={food._id} style={{ width: "24rem" }} >
 
-                                <MDBCardImage className="img-fluid" src="https://img4.goodfon.com/wallpaper/nbig/5/ae/iaponskaia-kukhnia-moreprodukty-assorti.jpg" height="" width="" waves />
+                                <MDBCardImage className="img-fluid" src={food.image} height="" width="" waves />
 
                                 <MDBCardBody>
                                     <MDBCardTitle>{food.name}</MDBCardTitle>
                                     <MDBCardText>
-                                        Select this to see options of delicious foods. Nom Nom Nom!
+                                        {food.description}
                 <br />
                                         <br />
                                         <Link to={{

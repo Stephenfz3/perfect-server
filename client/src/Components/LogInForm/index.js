@@ -95,6 +95,7 @@ class LoginForm extends Component
         </MDBRow>
       </MDBContainer>
       </div>
+      
     }
 
 
