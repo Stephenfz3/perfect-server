@@ -3,7 +3,7 @@ import Youtube from "react-youtube"
 import AddButton from "../Carlos/addButton";
 
 function Corousel(props) {
-  console.log("HERE"+props.result)
+  console.log("HEREeeeee"+props.result[0])
   return (
 <div className="bd-example">
   <div id="carouselExampleCaptions" className="carousel" data-ride="">
@@ -25,7 +25,7 @@ function Corousel(props) {
         <Youtube videoId={item.videoId} className="d-block w-100" alt="..."/>
           <h5>{item.item}</h5>
           <p>{item.description}</p>
-          <AddButton id={item._id} value={item} addToCart={props.addToCart} />
+          <AddButton id={item._id} value={item} nextStep={props.nextStep} addToCart={props.addToCart} />
       </div>)}
 
       <a  onClick={props.onPrevious} role="button" data-slide="prev">

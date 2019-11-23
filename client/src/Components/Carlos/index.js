@@ -25,7 +25,7 @@ class ShoppingCart extends Component {
           img: "",
           video: "",
           date: new Date(Date.now())
-        },
+        },+
         {
           item: "Amber Waves",
           category: "drink",
@@ -178,7 +178,7 @@ class ShoppingCart extends Component {
 
     console.log( "state.menu", this.state.menu );
 
-    const video = this.state.videos[this.state.videoIndex].url;
+    // const video = this.state.videos[this.state.videoIndex].url;
     return <div>
       <div id="container">
 

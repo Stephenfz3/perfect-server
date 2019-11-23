@@ -20,7 +20,7 @@ console.log(this.props.value)
         
         ; this.props.handleClick(event)}}>Add to cart</button> */}
 
-    <button id={this.props.id} onClick={(event) => { this.props.addToCart(this.props.value)}}>Add to cart</button>
+    <button id={this.props.id} onClick={(event) => { this.props.addToCart(this.props.value); this.props.nextStep()}}>Add to cart</button>
 
     </div>
 }

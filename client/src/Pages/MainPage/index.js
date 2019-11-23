@@ -16,6 +16,62 @@ class Detail extends Component {
     itemId:0,
     cart:[],
     fullmenu:false,
+  //   menu:[{ 
+
+  //     apps:
+      
+  //     [{item:"Dry Ribs",type:"App", price:8},
+  //   {item:"Lobster Tostadas",type:"App", price:8 },
+  //   {item:"Chicken Sliders",type:"App", price:8 },
+  //   {item:"Spicy Tuna Roll",type:"App", price:8 },
+  //   {item:"Street Tacos",type:"App", price:8 },
+  //   {item:"Buffalo Cauliflower",type:"App", price:8 },
+  //   {item:"Korean Wings",type:"App", price:8 },
+  //   {item:"Hot Wings",type:"App", price:8 },
+  //   {item:"Guac and Chips",type:"App", price:8 },
+  //   {item:"Dragon Roll",type:"App", price:8 },
+  //   {item:"Spinach Dip",type:"App", price:8 },],  
+
+  //   drinks:
+    
+  //   [{item:"Mojito",type:"Drink", price:8 },
+  //   {item:"Old Fashioned",type:"Drink" , price:8},
+  //   {item:"Margartia",type:"Drink", price:8 },
+  //   {item:"Moscoe Mule",type:"Drink", price:8 },
+  //   {item:"Cosmopolitan",type:"Drink", price:8 },
+  //   {item:"Wakefield IPA",type:"Drink", price:8 },
+  // ],
+
+  //   wines:
+
+  //   [{item:"Stags Leap Cabernet",type:"wine", price:8},
+  //   {item:"Lake Sonoma Cabernet",type:"wine", price:8},
+  //   {item:"The Prisoner",type:"wine", price:8},
+  //   {item:"Silver Oak",type:"wine", price:8},
+  //   {item:"Miraval Rose",type:"wine", price:8},
+  //   {item:"Scarpetta",type:"wine", price:8},],
+
+  //   entrees:
+    
+  //   [{item:"Cajun Salmon",type:"Entree", price:8 },
+  //   {item:"Santa Fe Chicken Salad",type:"Entree", price:8 },
+  //   {item:"Scallop Rissotto",type:"Entree" , price:8},
+  //   {item:"BBQ Ribs",type:"Entree", price:8 },
+  //   {item:"Crispy Chicken Sandwich",type:"Entree", price:8 },
+  //   {item:"Filet Tenderloin",type:"Entree", price:8 },
+  //   {item:"Cheddar Burger",type:"Entree", price:8 },
+  //   {item:"Bimimbap",type:"Entree", price:8 },
+  //   {item:"Poke Bowl",type:"Entree", price:8 },],
+
+
+
+  //   desert:
+    
+  //   [{item:"Smores Cheesecake",type:"Desert", price:8 },
+  // ]
+
+
+  //   }]
   }
 
   nextStep = () => {
@@ -183,11 +239,11 @@ else{
         <Row>
           <Col size="md-3">
         {/* {this.state.fullmenu&&<ShoppingCart next={this.nextStep}/>} */}
-        {this.state.fullmenu&&<List addToCart={this.addToCart} next={this.nextStep}/>}
+        {this.state.fullmenu&&<List addToCart={this.addToCart} />}
         <Cart items={this.state.cart} removeFromCart={this.removeFromCart} />
           </Col>
           <Col size="md-6">
-            <Carousel addToCart={this.addToCart} result={this.state.result} currentSlide={this.state.currentSlide}  onNext={()=>this.setState({currentSlide:this.state.currentSlide<this.state.result.length-1?this.state.currentSlide+1:0})} onPrevious={()=>this.setState({currentSlide:this.state.currentSlide>0?this.state.currentSlide-1:this.state.result.length-1})}></Carousel>
+            <Carousel nextStep={this.nextStep} addToCart={this.addToCart} result={this.state.result} currentSlide={this.state.currentSlide}  onNext={()=>this.setState({currentSlide:this.state.currentSlide<this.state.result.length-1?this.state.currentSlide+1:0})} onPrevious={()=>this.setState({currentSlide:this.state.currentSlide>0?this.state.currentSlide-1:this.state.result.length-1})}></Carousel>
           </Col>
         </Row>
         {/* buttons */}
