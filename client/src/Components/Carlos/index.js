@@ -177,13 +177,12 @@ class ShoppingCart extends Component {
 
   render() {
 
-    console.log( "state.menu", this.state.menu );
 
     const video = this.state.videos[this.state.videoIndex].url;
     return <div>
       <div id="container">
 
-          <Menu menu={this.state.menu}/>;
+          {/* <Menu menu={this.state.menu}/>; */}
           
         <List addToCart={this.addToCart} handleClick={this.handleClick} />
         {/* <ReactPlayer url={video} playing /> */}

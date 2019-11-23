@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import API from "../../utils/API";
 import Carousel from "../../Components/Carousel"
+import Youtube from "react-youtube";
+import BackButton from "../../Components//Buttons/BackButton";
+// import { getEnabledCategories } from 'trace_events';
+import SkipButton from "../../Components/Buttons/SkipButton";
+import AddButton from "../../Components/Carlos/addButton";
 import { Col, Row, Container } from "../../Components/Grid"
 import ShoppingCart from "../../Components/Carlos"
+import AddModal from "../../Components/Moda"
+import List from "../../Components/Carlos/list"
 class Detail extends Component {
 
   state = {
@@ -10,29 +17,43 @@ class Detail extends Component {
     selectedSteps: [1,3],
     result: [],
     skipped: [],
-    currentSlide:0
+    currentSlide:0,
+    cart: [],
+    videoId: "",
   }
 
 
   addToCart = (item) => {
     const cart = [...this.state.cart, item]
-    this.setState({ cart })
-    this.props.next();
-    
+    this.setState({ cart }, ()=>{this.nextStep()})
   }
 
   handleClick = e => {
+    e.preventDefault();
+    alert("try me");
     if (!e.target.id) {
-      const videoIndex = 0;
+      const videoId = "diT3FvDHMyo";
 
       this.setState({
-        videoIndex
+        videoId
       });
     }
-    const videoIndex = e.target.id
+    const videoId = e.target.videoId
 
     this.setState({
-      videoIndex
+      videoId
+    },()=>{
+      return(
+      <React.Fragment>
+        {alert("inside try me")}
+    <Youtube videoId={this.state.videoId} className="d-block w-100" alt="..." />
+      {/* <span> {e.target.item} </span>
+      <p>{e.target.description}</p> */}
+      <AddButton onClick={this.addToCart}  />
+      <SkipButton nextStep={this.nextStep} />
+      <BackButton prevStep={this.prevStep} />
+      </React.Fragment>
+)
     });
   };
 
@@ -151,28 +172,37 @@ class Detail extends Component {
   }
   };
 
-  carouselIndex=()=>{
-  
+  getCategory=()=>{
+    API.getDetails({category: "food"})
+    .then(res => {
+      this.setState({ category: [...this.state.category, res.data] })
+    })
+    .catch(err => console.log(err))
+  console.log(this.state.category)
   }
-
+  
   render() {
     return (
       <Container fluid>
       <div>
         <h1>MainPage</h1>
+        <button onClick={this.getCategory} >Category</button>
         <h2> {console.log(this.state.result)}</h2>
         <Row>
           <Col size="md-3">
         <ShoppingCart next={this.nextStep}/>
           </Col>
           <Col size="md-6">
-            <Carousel result={this.state.result} currentSlide={this.state.currentSlide} onNext={()=>this.setState({currentSlide:this.state.currentSlide<this.state.result.length-1?this.state.currentSlide+1:0})} onPrevious={()=>this.setState({currentSlide:this.state.currentSlide>0?this.state.currentSlide-1:this.state.result.length-1})}></Carousel>
+            <Carousel handleClick={this.handleClick} result={this.state.result} addToCart={this.addToCart} nextStep={this.nextStep} prevStep={this.prevStep} currentSlide={this.state.currentSlide}  onNext={()=>this.setState({currentSlide:this.state.currentSlide<this.state.result.length-1?this.state.currentSlide+1:0})} onPrevious={()=>this.setState({currentSlide:this.state.currentSlide>0?this.state.currentSlide-1:this.state.result.length-1})}></Carousel>
           </Col>
         </Row>
+        <div>
+         <List />
+        </div>
         {/* buttons */}
-        <button onClick={this.select}>Select</button>
+        {/* <button onClick={this.select}>Select</button>
         <button onClick={this.nextStep}>Skip</button>
-        <button onClick={this.prevStep}>Back</button>
+        <button onClick={this.prevStep}>Back</button> */}
       </div> 
       </Container>
     );

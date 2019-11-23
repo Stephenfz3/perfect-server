@@ -30,9 +30,11 @@
     "mdreact": "^0.1.5",
     "mongoose": "^5.7.9",
     "react": "^16.11.0",
+    "react-bootstrap": "^1.0.0-beta.16",
     "react-materialize": "^3.4.1",
     "react-player": "^1.14.1",
     "react-router-dom": "^5.1.2",
-    "react-youtube": "^7.9.0"
+    "react-youtube": "^7.9.0",
+    "reactstrap": "^8.1.1"
   }
 }

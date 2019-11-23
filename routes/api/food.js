@@ -5,29 +5,51 @@ const db = require("../../models/");
 
 // matches /api/foodPage
 router.route("/")
-  .get(function(req, res) {
+  .get(function (req, res) {
     db.FoodPairing
-    .find({})
+      .find({})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   })
-  .post(function(req, res) {
+  .post(function (req, res) {
     db.FoodPairing
       .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-  },);
+  });
 
-  // matches /api/foodpage/:id
+// matches /api/foodpage/:id
 router
-.route("/:id")
-      .get(function(req,res){
-        db.Menu
-        .findById(req.params.id)
-        .findAll({})
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err))
-      })
-        // foodController.findOne
+  .route("/:id")
+  .get(function (req, res) {
 
-  module.exports = router;
+    const results = [];
+
+    db.Menu
+      .findById(req.params.id)
+      .then(dbModel => {
+        results.push(dbModel)
+
+        console.log("results 1", results)
+
+        db.Menu.find({})
+          .then(data => {
+
+            results.push(data)
+
+            res.send( results )
+
+          })
+
+      })
+
+      .catch(err => res.status(422).json(err))
+
+
+
+
+  })
+
+// foodController.findOne
+
+module.exports = router;
