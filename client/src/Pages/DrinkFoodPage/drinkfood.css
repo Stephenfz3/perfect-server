@@ -1,0 +1,24 @@
+h1{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 0px;
+}
+h2{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding-top: 0px;
+
+}
+
+
+.card1{
+    padding-top:10px;
+}
+.card2{
+   padding-top:20px;
+
+}
+.img-fluid{
+   height: 300px !important;
+}

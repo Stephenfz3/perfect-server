@@ -4,21 +4,21 @@ import AddModal from "../../Moda"
 
 
 const items = [
-    {name:"Stella",type:"Drink", price:8 , videoId:"7CqJlxBYj-M"},
-    {name:"Amber Waves",type:"Drink", price:8, videoId:"7CqJlxBYj-M" },
-    {name:"La Rubia",type:"Drink" , price:8, videoId:"7CqJlxBYj-M"},
-    {name:"Dry Ribs",type:"App", price:8, videoId:"7CqJlxBYj-M" },
-    {name:"Lobster Tostadas",type:"App", price:8, videoId:"7CqJlxBYj-M" },
-    {name:"Queso Fondido",type:"App", price:8, videoId:"7CqJlxBYj-M"},
-    {name:"Cajun Chicken",type:"Entree", price:8, videoId:"7CqJlxBYj-M" },
-    {name:"NY Striploin",type:"Entree", price:8, videoId:"7CqJlxBYj-M" },
-    {name:"Sea Bass",type:"Entree" , price:8, videoId:"7CqJlxBYj-M"},
-    {name:"Toffe Cake",type:"Desert" , price:8, videoId:"7CqJlxBYj-M"},
-    {name:"Cheesecake",type:"Desert", price:8, videoId:"7CqJlxBYj-M" },
-    {name:"Keylime Pie",type:"Desert", price:8, videoId:"vVltNtWo_XQ" },
+    {item:"Stella",type:"Drink", price:8 },
+    {item:"Amber Waves",type:"Drink", price:8 },
+    {item:"La Rubia",type:"Drink" , price:8},
+    {item:"Dry Ribs",type:"App", price:8 },
+    {item:"Lobster Tostadas",type:"App", price:8 },
+    {item:"Queso Fondido",type:"App", price:8},
+    {item:"Cajun Chicken",type:"Entree", price:8 },
+    {item:"NY Striploin",type:"Entree", price:8 },
+    {item:"Sea Bass",type:"Entree" , price:8},
+    {item:"Toffe Cake",type:"Desert" , price:8},
+    {item:"Cheesecake",type:"Desert", price:8 },
+    {item:"Keylime Pie",type:"Desert", price:8 },
 ]
 
-// name = item type = catergory for database
+// item = item type = catergory for database
 
 export default class List extends Component {
 
@@ -37,14 +37,22 @@ render(){
     <tbody>
     <tr>
         <th>Add</th>
-        <th>Item name</th>
+        <th>Item item</th>
         <th>Item type</th>
         <th>Item price</th>
     </tr>
-    {items.map((item,index)=>{return <tr><td>
-        <AddButton addToCart={this.props.addToCart} item={item} id={index} onClick={this.props.handleClick}/>
+    {items.map((item,index)=>{
+{console.log("WELCOME TO THE JUNGLE"+item.item)}
+// eslint-disable-next-line no-unused-expressions
+return <tr key={index}>
+    <td>
+        {/* <button onClick={()=> this.props.addToCart(item)}>Add to cart</button> */}
+{/* 
+        <AddButton addToCart={this.props.addToCart} item={item} id={index} onClick={this.props.handleClick}/> */}
+        <AddButton id={item._id} value={item} addToCart={this.props.addToCart} />
+
         </td>
-     <td><AddModal videoId={item.videoId} name={item.name} isOpen={this.state.modalIsOpen} toggle={this.state.modalIsOpen} toggleModal={this.toggleModal}>{item.name}</AddModal></td>
+<td>{item.item}</td>
 <td>{item.type}</td>
 <td>${item.price}</td>    
 </tr>

@@ -1,0 +1,13 @@
+li{
+    float: left;
+    
+}
+.card1{
+    float: left;
+    padding-left:10px;
+    padding-top: 20px;
+}
+.foodcategory{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}

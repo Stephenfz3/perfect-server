@@ -150,8 +150,7 @@ class ShoppingCart extends Component {
   removeFromCart = (index) => {
     const cart = [...this.state.cart]
     cart.splice(index, 1)
-    this.setState({ cart })
-  }
+    this.setState({ cart })  }
 
   addToCart = (item) => {
     const cart = [...this.state.cart, item]
@@ -160,20 +159,20 @@ class ShoppingCart extends Component {
     
   }
 
-  handleClick = e => {
-    if (!e.target.id) {
-      const videoIndex = 0;
+  // handleClick = e => {
+  //   if (!e.target.id) {
+  //     const videoIndex = 0;
 
-      this.setState({
-        videoIndex
-      });
-    }
-    const videoIndex = e.target.id
+  //     this.setState({
+  //       videoIndex
+  //     });
+  //   }
+  //   const videoIndex = e.target.id
 
-    this.setState({
-      videoIndex
-    });
-  };
+  //   this.setState({
+  //     videoIndex
+  //   });  handleClick={this.handleClick}
+  // };
 
   render() {
 
@@ -184,7 +183,7 @@ class ShoppingCart extends Component {
 
           {/* <Menu menu={this.state.menu}/>; */}
           
-        <List addToCart={this.addToCart} handleClick={this.handleClick} />
+        <List addToCart={this.addToCart}  />
         {/* <ReactPlayer url={video} playing /> */}
         <Cart items={this.state.cart} removeFromCart={this.removeFromCart} />
       </div>

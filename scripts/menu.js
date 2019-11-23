@@ -12,7 +12,7 @@ const menu = [
     subCategory: "Beer",
     description: "Stella Artois is a classic Belgian lager, golden in color with a floral, hop aroma, well-balanced fruity malty sweetness, crisp hop bitterness and a soft dry finish. All natural ingredients give Stella Artois a clean, crisp palate.",
     img:"",
-    videoId: "ScatwNrAH_o",
+    videoId: "Gv1gV8LyKms",
     date: new Date(Date.now()), 
     price: 10
   },
@@ -23,7 +23,7 @@ const menu = [
     subCategory: "Beer",
     description: "Amber Waves Amber Ale focuses on the malts, but has a nice balance of hop character. Expect a light body with a nice toasted malt characteristic and slight fruitiness.",
     img:"",
-    videoId: "OhdzCSooj2o",
+    videoId: "wH3IcPJdxAg",
     date: new Date(Date.now()),
     price: 10
   },
@@ -34,7 +34,7 @@ const menu = [
     subCategory: "wine",
     description: "This Cabernet Sauvignon welcomes you with aromas of cedar, dark cherry compote, and dried tobacco leaves. Deliciously balanced and laced with flavors of blackberry pie, cinnamon, and allspice, this wine maintains approachable tannins and shows through to a savory finish.",
     img:"",
-    videoId: "",
+    videoId: "c0holnMELMU",
     date: new Date(Date.now()),
     price: 10
   },
@@ -45,18 +45,18 @@ const menu = [
     subCategory: "wine",
     description: "The 2017 ARTEMIS Cabernet Sauvignon offers inviting aromas of ripe raspberry, boysenberry and dark cherry along with hints of cedar and spice. The mid-palate is pleasant and round with flavors of plum, dark chocolate, dried fruit and a touch of toasted oak. The finish is rich and lingering.",
     img:"",
-    videoId: "adseCgsYSYs",
+    videoId: "-f1pWL5Lm6I",
     date: new Date(Date.now()),
     price: 10
   },
   {
     _id: 5,
-    item: "Freemark Chardonnay",
+    item: "Miraval",
     category: "drink",
     subCategory: "wine",
-    description: "The 2016 Chardonnay is scented of baked pears, ripe apples and dried herbs with touches of cedar, and cinnamon toast. Full-bodied, rich and with a pleasantly oily texture, it is jam packed with ripe apple and toasty layers, finishing long.",
+    description: "Made for the owners by the Perrin family of Château de Beaucastel in the Rhône Valley, this wine exhibits great sophistication, with rich caramel and strawberry fruit and spice.",
     img:"",
-    videoId: "aQz65kt-0Sk",
+    videoId: "YvffBi5flGM",
     date: new Date(Date.now()),
     price: 10
   },
@@ -67,7 +67,7 @@ const menu = [
     subCategory: "wine",
     description: "Scarpetta Pinot Grigio showcases some of the best sites in Friuli-Venezia Giulia for this aromatic varietal — starting with the light, gravely soils of the Grave region. This gives it a crisp, clean minerality. Additionally, 30% of our Pinot Grigio is planted on 'Ponca' soil in the Colli Orientali on steep hillsides. The combination of the Grave and Colli Orientali let us produce a wine which has body, bright acidity, and great minerality.",
     img:"",
-    videoId: "",
+    videoId: "twCOvRooi1A",
     date: new Date(Date.now()),
     price: 10
   },
@@ -78,18 +78,18 @@ const menu = [
     subCategory: "cocktail",
     description: "Makers Mark Old fashioned with sweet demarera sugar topped of with an fresh orange peel and a maraschino cherry",
     img:"",
-    videoId: "",
+    videoId: "9TL6LF2Ked4",
     date: new Date(Date.now()),
     price: 10
   },
   {
     _id: 8,
-    item: "Charred Jalapeño Margarita",
+    item: "Margarita",
     category: "drink",
     subCategory: "cocktail",
-    description: "Hornitos reposado tequila, Ancho Reyes, Triple Sec, charred jalapeno and fresh lime",
+    description: "Don Julio blanco tequila, Triple Sec, and fresh lime",
     img:"",
-    videoId: "",
+    videoId: "4UwCVGohTFE",
     date: new Date(Date.now()),
     price: 10
   },
@@ -100,7 +100,7 @@ const menu = [
     subCategory: "appetizer",
     description: "Earls famous dry ribs, savoury and seasoned with coarse salt and black pepper",
     img:"",
-    videoId: "",
+    videoId: "1WriDiybpUs",
     date: new Date(Date.now()),
     price: 10
   },
@@ -111,29 +111,29 @@ const menu = [
     subCategory: "appetizer",
     description: "Sweet Atlantic lobster, avocado, jalapeño crema, pico de gallo",
     img:"",
-    videoId: "",
+    videoId: "qPJShXWJD1k",
     date: new Date(Date.now()),
     price: 10
   },
   {
     _id: 11,
-    item: "BBQ Ribs + Cajun Chicken",
+    item: "BBQ Ribs",
     category: "food",
     subCategory: "entrees",
-    description: "Tender pork, braised low and slow plated with blackened full breast of chicken, garlic butter with warm potato salad, smoky bacon, coleslaw ",
+    description: "Tender pork, braised low and slow, plated with warm potato salad, smoky bacon, and coleslaw ",
     img:"",
-    videoId: "",
+    videoId: "AidcofT1iwg",
     date: new Date(Date.now()),
     price: 10
   },
   {
     _id: 12,
-    item: "Mediterranean Sea Bass",
+    item: "Scallop risotto",
     category: "food",
     subCategory: "entrees",
     description: "Pan seared with caramelized onion, potato, cauliflower, basil puree, pesto, sweet pepper broth ",
     img:"",
-    videoId: "",
+    videoId: "aud1X5t5PE4",
     date: new Date(Date.now()),
     price: 10
   },
@@ -144,21 +144,66 @@ const menu = [
     subCategory: "desert",
     description: "Housemade warm chocolate cake drizzled with rich chocolate and toffee sauce, served with a scoop of vanilla gelato in a sugar candy basket",
     img:"",
-    videoId: "",
+    videoId: "Cn-X2Ti9Xj4",
     date: new Date(Date.now()),
     price: 10
   },
   {
     _id: 14,
-    item: "NYC Blueberry Cheesecake",
+    item: "Smore's Cheesecake",
     category: "food",
     subCategory: "desert",
-    description: "Fresh cheescake,cracker crust, whipped chantilly cream",
-    videoId: "",
+    description: "Fresh cheescake,cracker crust, whipped chantilly cream and toasted marshmallows",
+    videoId: "lKVtu-cJbpM",
     img:"",
     date: new Date(Date.now()),
     price: 10
-  },]
+  },
+  {
+    _id: 15,
+    item: "Cheddar Burger",
+    category: "food",
+    subCategory: "desert",
+    description: "Fresh burger made from real cows",
+    videoId: "-jsadMXItuQ",
+    img:"",
+    date: new Date(Date.now()),
+    price: 10
+  },
+  {
+    _id: 16,
+    item: "Crispy Chicken Sandwich",
+    category: "food",
+    subCategory: "desert",
+    description: "Fresh chicken sandwich made from real turkeys",
+    videoId: "ci2_XEeVGyQ",
+    img:"",
+    date: new Date(Date.now()),
+    price: 10
+  },
+  {
+    _id: 17,
+    item: "6oz filet",
+    category: "food",
+    subCategory: "steak",
+    description: "Yummy steak, kinda small",
+    videoId: "lKVtu-cJbpM",
+    img:"",
+    date: new Date(Date.now()),
+    price: 10
+  },
+  {
+    _id: 18,
+    item: "Ahi Tuna Poke Bowl",
+    category: "food",
+    subCategory: "seafood",
+    description: "Fresh raw tuna that sits on a bed of mango, crispy white rice, and garnish with fresh radish coins",
+    videoId: "-WZijflqDEg",
+    img:"",
+    date: new Date(Date.now()),
+    price: 10
+  },
+]
 ;
 
 module.exports=function(db)
