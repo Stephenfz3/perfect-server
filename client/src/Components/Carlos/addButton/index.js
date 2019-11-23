@@ -18,15 +18,11 @@ console.log(this.props.value)
         
         ; this.props.handleClick(event)}}>Add to cart</button> */}
           <MDBBtn className="peach-gradient" id={this.props.id} onClick={(event) => { this.props.addToCart(this.props.value)}}>Add to cart</MDBBtn>
-         
-          <MDBBtn className="peach-gradient" >Previous</MDBBtn>
-          
-          <MDBBtn className="peach-gradient" next={this.props.next}>Next Category </MDBBtn>
-          
-          <MDBBtn className="peach-gradient" onNext={this.props.onNext}>Next </MDBBtn>
-         
 
-    
+
+        
+
+          
 
     </div>
     

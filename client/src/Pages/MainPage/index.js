@@ -244,9 +244,8 @@ class Detail extends Component {
               </Col>
             </Row>
             {/* buttons */}
-            <button onClick={this.select}>Select</button>
-            <button onClick={this.nextStep}>Skip</button>
-            <button prevStep={this.prevStep}>Back</button>
+  
+           
           </div>
         </Container>
 

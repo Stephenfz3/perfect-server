@@ -16,3 +16,6 @@
   .box2{
       display: inline;
   }
+  body{
+      background-image: url("");
+  }
