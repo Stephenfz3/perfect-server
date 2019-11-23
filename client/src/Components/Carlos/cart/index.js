@@ -19,7 +19,6 @@ class Cart extends Component {
       }
     
       render(){
-          console.log("OVERHERE BRO"+this.props.items)
 if(this.props.items === 0){
     return <div id="cart">
         <p>Cart is empty</p>

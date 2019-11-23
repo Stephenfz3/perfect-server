@@ -6,10 +6,6 @@ import "../Carousel/Carousel.css"
 import Detail from "../../Pages/MainPage/index"
 
 function Corousel(props) {
-  console.log("HERE" + props.result)
-
-
-
 
   return (
     <div >

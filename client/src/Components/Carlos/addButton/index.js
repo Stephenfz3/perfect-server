@@ -13,7 +13,6 @@ super(props)
 
     }
 
-
 render() {
 console.log(this.props.value)
     return <div >
