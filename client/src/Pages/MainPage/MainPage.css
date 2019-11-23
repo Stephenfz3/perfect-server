@@ -1,0 +1,21 @@
+.youtube{
+    border-style: solid;
+}
+.fancy-border {
+ 
+    border-image: url("") 25;
+    margin-bottom: 80px;
+    margin-top:0px;
+
+
+  }
+  
+  .box{
+      display: inline;
+  }
+  .box2{
+      display: inline;
+  }
+  body{
+      background-image: url("");
+  }

@@ -1,13 +1,13 @@
 import React from 'react'
 
-import '../Navbar/navbar.css'
+import './navbar.css'
 
 
 
 const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <a className="navbar-brand" href="index">Perfect Server</a>
+          <a className="navbar-brand" href="/">Perfect Server</a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
               aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>

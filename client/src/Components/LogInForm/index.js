@@ -2,11 +2,9 @@
 import React, {Component} from 'react';
 import Api from '../../utils/API';
 import {Link} from 'react-router-dom';
-import '../LogInForm/loginform.css'
+import './loginform.css'
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBInput, MDBBtn, MDBIcon } from 'mdbreact';
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import "bootstrap-css-only/css/bootstrap.min.css";
-import "mdbreact/dist/css/mdb.css";
+
 
 
 class LoginForm extends Component
@@ -74,7 +72,7 @@ class LoginForm extends Component
                 <MDBRow className="d-flex align-items-center mb-4 mt-5">
                   <MDBCol md="5" className="d-flex align-items-start">
                     <div className="text-center">
-                    <Link onClick={this.login} class="btn btn-primary" to="/drinkfood" role="button">Login</Link>
+                    <Link onClick={this.login} className="btn btn-primary" to="/drinkfood" role="button">Login</Link>
                        
                     </div>
                   </MDBCol>
@@ -97,6 +95,7 @@ class LoginForm extends Component
         </MDBRow>
       </MDBContainer>
       </div>
+      
     }
 
 

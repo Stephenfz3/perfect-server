@@ -1,0 +1,12 @@
+.footer-copyright{
+    color:black;
+    
+}
+.foot{
+    position: fixed!important;
+    
+    width: 100%;
+    height: 4rem;
+    font-family: 'Lobster Two', cursive;
+    overflow: hidden;
+}

@@ -6,13 +6,15 @@ import './App.css';
 // import {items} from './data/items';
 import HomePage from './Pages/HomePage';
 import {BrowserRouter as Router, Route,Switch} from 'react-router-dom';
-import SignUpPage from './Pages/SignUpPage';
+
+// import SignUpPage from './Pages/SignUpPage';
 import DrinkFoodPage from './Pages/DrinkFoodPage';
 import foodpage from "./Pages/FoodPage/index"
 import drinkpage from "./Pages/DrinkPage"
-import Login from './Pages/LogInPage'; 
-import Navbar from './components/Navbar';
-import MainPage from "./Pages/MainPage"
+import Login from './Components/containers/LoginPage'; 
+import Navbar from './Components/Navbar';
+import MainPage from "./Pages/MainPage";
+import Footer from './Components/Footer';
 
 class App extends Component
 {
@@ -23,7 +25,8 @@ class App extends Component
             typeOfFood:null,
             currentCategory:null,
             order:[],
-            session:null
+            session:null,
+            
 
         }
     }
@@ -55,16 +58,18 @@ class App extends Component
       <Router>
       <div>
       <Navbar />
+    
         <Switch>
           <Route exact path="/" component={()=><HomePage session={this.state.session} /> } />
-          <Route exact path="/signup" component={()=><SignUpPage session={this.state.session} /> } />
+
+          {!this.state.session&& <Route exact path="/login" component={()=><Login onLogin={this.signIn} />} />}
+          <Route exact path="/foodpage/:id" component={MainPage} />
           <Route exact path="/drinkfood" component={()=><DrinkFoodPage session={this.state.session} /> } />
           <Route exact path="/foodpage" component={foodpage} />
           <Route exact path="/drinkpage" component={drinkpage} />
-          {!this.state.session&& <Route exact path="/login" component={()=><Login onLogin={this.signIn} />} />}
-          <Route exact path="/foodpage/:id" component={MainPage} />
         </Switch>
       </div>
+      {/* <Footer /> */}
     </Router>
       )
         // if(!this.state.typeOfFood)

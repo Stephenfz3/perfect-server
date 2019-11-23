@@ -1,48 +1,72 @@
 import React from "react";
 import Youtube from "react-youtube"
+import AddButton from "../Carlos/addButton";
+import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact';
+import "../Carousel/Carousel.css"
+import Detail from "../../Pages/MainPage/index"
 
 function Corousel(props) {
+  console.log("HERE" + props.result)
+
+
+
+
   return (
-<div className="bd-example">
-  <div id="carouselExampleCaptions" className="carousel slide" data-ride="carousel">
-    <ol className="carousel-indicators">
-      <li data-target="#carouselExampleCaptions" data-slide-to="0" className="active"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-    </ol>
-    <div className="carousel-inner">
-      <div className="carousel-item active">
-        <Youtube {...props} className="d-block w-100" alt="..."/> 
-            <div className="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </div>
-      </div>
-      <div className="carousel-item">
-        <Youtube {...props} className="d-block w-100" alt="..."/>
-        <div className="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-      </div>
-      <div className="carousel-item">
-        <img src="http://qnimate.com/wp-content/uploads/2014/03/images2.jpg" className="d-block w-100" alt="..."/>
-        <div className="carousel-caption d-none d-md-block">
-          <h5>Third slide label</h5>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-        </div>
-      </div>
+    <div>
+
+      <MDBCol>
+        <MDBCard className="card1" style={{ width: "50rem" }}>
+
+          <MDBCardBody>
+            <MDBCardTitle></MDBCardTitle>
+            <MDBCardText>
+              <div className="bd-example">
+                
+
+
+                  <div className="carousel-inner">
+                    {props.result.map((item, index) =>
+
+
+
+                      <div key={`slide-${index}`} className={`carousel-item ${index === props.currentSlide && 'active'}`}>
+
+                        {console.log("It" + item.item)}
+
+                        <Youtube videoId={item.videoId} className="d-block w-100" alt="..." />
+                        <h5>{item.item}</h5>
+                        <p>{item.description}</p>
+                        
+                        <AddButton onNext={props.onNext} next={props.next} id={item._id} value={item} addToCart={props.addToCart} />
+
+                      </div>)}
+
+                    <a onClick={props.onPrevious} role="button" data-slide="prev">
+                      <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span className="sr-only">Previous</span>
+                    </a>
+
+                    <a className="carousel-control-next"  role="button" data-slide="next">
+                      <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span className="sr-only">Next</span>
+                      
+                    </a>
+                  </div>
+               
+              </div>
+              <MDBBtn onClick={props.onPrevious} className="peach-gradient" >Previous</MDBBtn>
+              <MDBBtn onClick={props.onNext} className="peach-gradient" >Next</MDBBtn>
+              <MDBBtn className="peach-gradient" onClick={(event) => {props.next()}} >Next Category </MDBBtn>
+            </MDBCardText>
+          </MDBCardBody>
+        </MDBCard>
+
+      </MDBCol>
+
+
     </div>
-    <a className="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-      <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span className="sr-only">Previous</span>
-    </a>
-    <a className="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-      <span className="carousel-control-next-icon" aria-hidden="true"></span>
-      <span className="sr-only">Next</span>
-    </a>
-  </div>
-</div>
+
+
   );
 }
 
